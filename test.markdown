@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Test
-permalink: /docs/test/
+permalink: /test/
 ---
 
 This is a test!
