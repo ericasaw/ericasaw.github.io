@@ -1,121 +1,16 @@
-<!DOCTYPE html>
-<style>
-.footer-heading { font-size: 0px; margin-bottom: 15px; }
-</style>
-
-<html lang="en"><head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Test | Your awesome title</title>
-<meta name="generator" content="Jekyll v4.2.2" />
-<meta property="og:title" content="Test" />
-<meta property="og:locale" content="en_US" />
-<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
-<meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
-<link rel="canonical" href="http://localhost:4000/test/" />
-<meta property="og:url" content="http://localhost:4000/test/" />
-<meta property="og:site_name" content="Your awesome title" />
-<meta property="og:type" content="website" />
-<meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Test" />
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.","headline":"Test","url":"http://localhost:4000/test/"}</script>
-<!-- End Jekyll SEO tag -->
-<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Your awesome title" /></head>
-<body><header class="site-header" role="banner">
-
-  <div class="wrapper"><a class="site-title" rel="author" href="/">Your awesome title</a><nav class="site-nav">
-        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
-        <label for="nav-trigger">
-          <span class="menu-icon">
-            <svg viewBox="0 0 18 15" width="18px" height="15px">
-              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
-            </svg>
-          </span>
-        </label>
-
-        <div class="trigger"><a class="page-link" href="/about/">About</a><a class="page-link" href="/test/">Test</a></div>
-      </nav></div>
-</header>
-<main class="page-content" aria-label="Content">
-      <div class="wrapper">
-        <style>
-.footer-heading { font-size: 0px; margin-bottom: 15px; }
-
-html {
-  scroll-behavior: smooth;
-}
-
-/*remove the numbers from the list in the side navigation */
-ul, ol {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-/* Make nav sticky ie. follow the scroll */
-main > nav {
-  position: sticky;
-  top: 2rem;
-  align-self: start;
-}
-
-/* The sidebar menu placement on the page */
-.section-nav {
-  height: 40%; /* Full-height: remove this if you want "auto" height */
-  width: 160px; /* Set the width of the sidebar */
-  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-  z-index: 1; /* Stay on top */
-  top: 75px; /* Stay at the top */
-  left: 350px;
-  background-color: #fdfdfd; /* Black */
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 20px;
-}
-
-/*text fancification*/
-.section-nav a {
-  text-decoration: none;
-  display: block;
-  padding: .125rem 0;
-  color: #525151;
-  transition: all 100ms ease-in-out; /* ðŸ’¡ This small transition makes setting of the active state smooth */
-}
-
-/*change the hover color*/
-.section-nav a:hover{
-  color: #f1f1f1;
-}
-
-/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
-
-</style>
-
-<article class="tutorial">
-
-  <header class="post-header">
-    <h1 class="post-title">Test</h1>
-  </header>
-
-  <div class="post-content">
-    <main>
+I"Ñ<main>
   <div>
     <h1 id="first_tut">First </h1>
       <section>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lectus magna fringilla urna porttitor. Metus vulputate eu scelerisque felis. Mollis nunc sed id semper risus. Morbi tristique senectus et netus. Arcu vitae elementum curabitur vitae nunc. Felis eget nunc lobortis mattis aliquam faucibus purus in massa. Fringilla ut morbi tincidunt augue. Nibh cras pulvinar mattis nunc sed blandit libero. Vehicula ipsum a arcu cursus vitae congue mauris rhoncus. Nec feugiat in fermentum posuere urna nec tincidunt praesent semper. A diam maecenas sed enim ut sem viverra aliquet. Nisi scelerisque eu ultrices vitae auctor eu.
-
-        Ultricies leo integer malesuada nunc. Pharetra vel turpis nunc eget lorem dolor sed viverra ipsum. Ultricies leo integer malesuada nunc. Nisi porta lorem mollis aliquam ut. In ornare quam viverra orci. Faucibus in ornare quam viverra orci sagittis eu volutpat odio. Habitant morbi tristique senectus et netus et malesuada fames. Posuere sollicitudin aliquam ultrices sagittis. Integer enim neque volutpat ac tincidunt vitae semper. In pellentesque massa placerat duis ultricies lacus. Iaculis eu non diam phasellus vestibulum lorem sed risus. Malesuada proin libero nunc consequat interdum. Ornare aenean euismod elementum nisi. Nulla facilisi etiam dignissim diam quis. Maecenas pharetra convallis posuere morbi leo urna molestie. Egestas diam in arcu cursus euismod quis viverra nibh. Imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Aenean et tortor at risus viverra adipiscing at in tellus.
-
-        Posuere ac ut consequat semper. Aliquet enim tortor at auctor urna nunc. Ipsum dolor sit amet consectetur. Mattis molestie a iaculis at erat pellentesque. Nulla facilisi morbi tempus iaculis urna id volutpat lacus. Vel risus commodo viverra maecenas. Aliquam ut porttitor leo a diam sollicitudin tempor id. Vitae tortor condimentum lacinia quis. Volutpat maecenas volutpat blandit aliquam etiam erat. Mi quis hendrerit dolor magna eget est lorem. Pretium viverra suspendisse potenti nullam ac tortor. Turpis massa tincidunt dui ut ornare. Mollis aliquam ut porttitor leo. A erat nam at lectus urna. Ut aliquam purus sit amet luctus.
       </section>
 
     <h1 id="second_tut">Second </h1>
       <section>
+        Ultricies leo integer malesuada nunc. Pharetra vel turpis nunc eget lorem dolor sed viverra ipsum. Ultricies leo integer malesuada nunc. Nisi porta lorem mollis aliquam ut. In ornare quam viverra orci. Faucibus in ornare quam viverra orci sagittis eu volutpat odio. Habitant morbi tristique senectus et netus et malesuada fames. Posuere sollicitudin aliquam ultrices sagittis. Integer enim neque volutpat ac tincidunt vitae semper. In pellentesque massa placerat duis ultricies lacus. Iaculis eu non diam phasellus vestibulum lorem sed risus. Malesuada proin libero nunc consequat interdum. Ornare aenean euismod elementum nisi. Nulla facilisi etiam dignissim diam quis. Maecenas pharetra convallis posuere morbi leo urna molestie. Egestas diam in arcu cursus euismod quis viverra nibh. Imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Aenean et tortor at risus viverra adipiscing at in tellus.
+
+        Posuere ac ut consequat semper. Aliquet enim tortor at auctor urna nunc. Ipsum dolor sit amet consectetur. Mattis molestie a iaculis at erat pellentesque. Nulla facilisi morbi tempus iaculis urna id volutpat lacus. Vel risus commodo viverra maecenas. Aliquam ut porttitor leo a diam sollicitudin tempor id. Vitae tortor condimentum lacinia quis. Volutpat maecenas volutpat blandit aliquam etiam erat. Mi quis hendrerit dolor magna eget est lorem. Pretium viverra suspendisse potenti nullam ac tortor. Turpis massa tincidunt dui ut ornare. Mollis aliquam ut porttitor leo. A erat nam at lectus urna. Ut aliquam purus sit amet luctus.
+
         Viverra mauris in aliquam sem fringilla ut morbi tincidunt. Ut faucibus pulvinar elementum integer enim. Id velit ut tortor pretium viverra suspendisse potenti nullam ac. Congue nisi vitae suscipit tellus mauris a. Nisl purus in mollis nunc sed id. Id volutpat lacus laoreet non. Ut pharetra sit amet aliquam id diam. Fermentum odio eu feugiat pretium nibh ipsum consequat nisl. Quam id leo in vitae. Ultrices vitae auctor eu augue. Ullamcorper velit sed ullamcorper morbi tincidunt ornare.
 
         Felis bibendum ut tristique et egestas quis ipsum suspendisse. Cursus turpis massa tincidunt dui. Nunc sed id semper risus. Imperdiet massa tincidunt nunc pulvinar sapien et. Eget sit amet tellus cras. Eu consequat ac felis donec et odio pellentesque. At varius vel pharetra vel turpis nunc eget lorem dolor. Interdum posuere lorem ipsum dolor sit amet consectetur. Congue quisque egestas diam in arcu cursus euismod. Maecenas accumsan lacus vel facilisis volutpat est velit egestas dui. Nam libero justo laoreet sit amet cursus sit amet dictum. Ullamcorper a lacus vestibulum sed arcu non odio. Rutrum tellus pellentesque eu tincidunt. Ipsum suspendisse ultrices gravida dictum fusce ut placerat.
@@ -139,36 +34,4 @@ main > nav {
       </ol>
     </nav>
 </main>
-
-  </div>
-
-</article>
-
-      </div>
-    </main><footer class="site-footer h-card">
-  <data class="u-url" href="/"></data>
-
-  <div class="wrapper">
-
-    <h2 class="footer-heading">Your awesome title</h2>
-
-    <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
-        <ul class="contact-list">
-          <li class="p-name">Your awesome title</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
-      </div>
-
-      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/jekyll"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">jekyll</span></a></li><li><a href="https://www.twitter.com/jekyllrb"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">jekyllrb</span></a></li></ul>
-</div>
-
-      <div class="footer-col footer-col-3">
-        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
-      </div>
-    </div>
-
-  </div>
-
-</footer>
-</body>
-
-</html>
+:ET

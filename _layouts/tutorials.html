@@ -1,0 +1,70 @@
+---
+layout: default
+---
+<style>
+.footer-heading { font-size: 0px; margin-bottom: 15px; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+/*remove the numbers from the list in the side navigation */
+ul, ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Make nav sticky ie. follow the scroll */
+main > nav {
+  position: sticky;
+  top: 2rem;
+  align-self: start;
+}
+
+/* The sidebar menu placement on the page */
+.section-nav {
+  height: 40%; /* Full-height: remove this if you want "auto" height */
+  width: 160px; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 75px; /* Stay at the top */
+  left: 350px;
+  background-color: #fdfdfd; /* Black */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px;
+}
+
+/*text fancification*/
+.section-nav a {
+  text-decoration: none;
+  display: block;
+  padding: .125rem 0;
+  color: #525151;
+  transition: all 100ms ease-in-out; /* 💡 This small transition makes setting of the active state smooth */
+}
+
+/*change the hover color*/
+.section-nav a:hover{
+  color: #f1f1f1;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+</style>
+
+<article class="tutorial">
+
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title | escape }}</h1>
+  </header>
+
+  <div class="post-content">
+    {{ content }}
+  </div>
+
+</article>
