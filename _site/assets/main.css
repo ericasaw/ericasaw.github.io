@@ -52,9 +52,9 @@ pre { padding: 8px 12px; overflow-x: auto; }
 pre > code { border: 0; padding-right: 0; padding-left: 0; }
 
 /** Wrapper */
-.wrapper { max-width: -webkit-calc(800px - (30px * 2)); max-width: calc(800px - (30px * 2)); margin-right: auto; margin-left: auto; padding-right: 30px; padding-left: 30px; }
+.wrapper { /*max-width: -webkit-calc(800px - (30px / 10)); max-width:         calc(800px - (30px / 10));*/ max-width: -webkit-calc(800px); max-width: calc(800px); margin-right: auto; margin-left: auto; /*padding-right: $spacing-unit / 10; padding-left: $spacing-unit / 10;*/ }
 
-@media screen and (max-width: 800px) { .wrapper { max-width: -webkit-calc(800px - (30px)); max-width: calc(800px - (30px)); padding-right: 15px; padding-left: 15px; } }
+@media screen and (max-width: 800px) { .wrapper { max-width: -webkit-calc(800px); max-width: calc(800px); /*padding-right: $spacing-unit / 10; padding-left: $spacing-unit / 10;*/ } }
 
 /** Clearfix */
 .footer-col-wrapper:after, .wrapper:after { content: ""; display: table; clear: both; }
@@ -105,13 +105,13 @@ table td { border: 1px solid #e8e8e8; }
 
 .footer-col { float: left; margin-bottom: 15px; padding-left: 15px; }
 
-.footer-col-1 { width: -webkit-calc(35% - (30px / 2)); width: calc(35% - (30px / 2)); }
+.footer-col-1 { width: -webkit-calc(30% - (30px / 2)); width: calc(30% - (30px / 2)); }
 
-.footer-col-2 { width: -webkit-calc(20% - (30px / 2)); width: calc(20% - (30px / 2)); }
+.footer-col-2 { width: -webkit-calc(25% - (30px / 2)); width: calc(25% - (30px / 2)); }
 
 .footer-col-3 { width: -webkit-calc(45% - (30px / 2)); width: calc(45% - (30px / 2)); }
 
-@media screen and (max-width: 800px) { .footer-col-1, .footer-col-2 { width: -webkit-calc(50% - (30px / 2)); width: calc(50% - (30px / 2)); } .footer-col-3 { width: -webkit-calc(100% - (30px / 2)); width: calc(100% - (30px / 2)); } }
+@media screen and (max-width: 800px) { .footer-col-1, .footer-col-2 { width: -webkit-calc(40% - (30px / 2)); width: calc(40% - (30px / 2)); } .footer-col-3 { width: -webkit-calc(100% - (30px / 2)); width: calc(100% - (30px / 2)); } }
 
 @media screen and (max-width: 600px) { .footer-col { float: none; width: -webkit-calc(100% - (30px / 2)); width: calc(100% - (30px / 2)); } }
 

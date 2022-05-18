@@ -21,14 +21,74 @@
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <article class="post">
+        <style>
 
-  <div class="post-content">
-    <p><img src="images/IGRINS_and_RRISA.png" alt="" style="display:block; margin-left:auto; margin-right:auto" /></p>
+html {
+  scroll-behavior: smooth;
+}
 
+/* 2. Make nav sticky */
+test > nav {
+  position: sticky;
+  align-self: start;
+}
+
+/* Sidebar Navigation */
+.section-nav {
+  padding-right: 0;
+  margin-right: 2rem;
+}
+
+.section-nav a {
+  text-align: right;
+  text-decoration: none;
+  display: block;
+  color: #828282;
+  width: 8rem;
+}
+
+.section-nav a:hover,
+.section-nav a:focus{
+  color: #111;
+}
+
+ul, ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/** page layout **/
+container {
+  display: flex;
+  flex-direction: row;
+}
+
+</style>
+
+<container>
+  <nav class="section-nav">
+    <ol>
+      <li><a href="#box">UTBox</a></li>
+      <li><a href="#muler">Quick Look</a></li>
+      <li><a href="#specutils">Line Fitting</a></li>
+    </ol>
+  </nav>
+  <div>
+      <section id="box">
+        <h2>Querying UTBox with Python</h2>
+        <p>This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at</p>
+      </section>
+      <section id="muler">
+        <h2>Quicklook IGRINS Spectra Using muler</h2>
+        <pre>Here is an example of a code block</pre>
+      </section>
+      <section id="specutils">
+        <h2>Line Fitting Using specutils</h2>
+        <p>…</p>
+      </section>
   </div>
-
-</article>
+</container>
 
       </div>
     </main><footer class="site-footer h-card">

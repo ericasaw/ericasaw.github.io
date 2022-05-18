@@ -1,0 +1,15 @@
+I"<h1>Reduced Data Products</h1>
+<p>a brief introduction here</p>
+
+<p>Downloadable from <a href="https://github.com/IGRINScontact/RRISA.git">our github</a> as a .csv or .xls or see the spreadsheet embedded below.</p>
+
+<h3>Data Reduction</h3>
+<p>description of IGRINSplp here + caveats of rereducing and a link to the tutorials section on the raw page when it is
+created</p>
+
+<h3>Object Matching</h3>
+<p>need to describe some object matching caveats here.</p>
+
+<h3>Embedded Spreadsheet</h3>
+<iframe title="A test RRISA google sheet insert" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRtfBHWcplfpXJvxq2-PVoxkubwwTuQQtsvdTuTTdPxxWFpJKp3MPzPNhH0Eur87F8nytKgOLKwbyY6/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false" height="100%" width="100%"></iframe>
+:ET

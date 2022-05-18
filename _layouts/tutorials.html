@@ -1,69 +1,72 @@
 ---
 layout: default
 ---
+
 <style>
 
 html {
   scroll-behavior: smooth;
 }
 
-/*remove the numbers from the list in the side navigation */
+/* 2. Make nav sticky */
+test > nav {
+  position: sticky;
+  align-self: start;
+}
+
+/* Sidebar Navigation */
+.section-nav {
+  padding-right: 0;
+  margin-right: 2rem;
+}
+
+.section-nav a {
+  text-align: right;
+  text-decoration: none;
+  display: block;
+  color: #828282;
+  width: 8rem;
+}
+
+.section-nav a:hover,
+.section-nav a:focus{
+  color: #111;
+}
+
 ul, ol {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-/* Make nav sticky ie. follow the scroll */
-main > nav {
-  position: sticky;
-  top: 2rem;
-  align-self: start;
-}
-
-/* The sidebar menu placement on the page */
-.section-nav {
-  height: 40%; /* Full-height: remove this if you want "auto" height */
-  width: 160px; /* Set the width of the sidebar */
-  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-  z-index: 1; /* Stay on top */
-  top: 75px; /* Stay at the top */
-  left: 350px;
-  background-color: #fdfdfd; /* Black */
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 20px;
-}
-
-/*text fancification*/
-.section-nav a {
-  text-decoration: none;
-  display: block;
-  padding: .125rem 0;
-  color: #525151;
-  transition: all 100ms ease-in-out; /* 💡 This small transition makes setting of the active state smooth */
-}
-
-/*change the hover color*/
-.section-nav a:hover{
-  color: #f1f1f1;
-}
-
-/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
+/** page layout **/
+container {
+  display: flex;
+  flex-direction: row;
 }
 
 </style>
 
-<article class="tutorial">
-
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title | escape }}</h1>
-  </header>
-
-  <div class="post-content">
-    {{ content }}
+<container>
+  <nav class="section-nav">
+    <ol>
+      <li><a href="#box">UTBox</a></li>
+      <li><a href="#muler">Quick Look</a></li>
+      <li><a href="#specutils">Line Fitting</a></li>
+    </ol>
+  </nav>
+  <div>
+      <section id="box">
+        <h2>Querying UTBox with Python</h2>
+        <p>This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at</p>
+      </section>
+      <section id="muler">
+        <h2>Quicklook IGRINS Spectra Using muler</h2>
+        <pre>Here is an example of a code block</pre>
+      </section>
+      <section id="specutils">
+        <h2>Line Fitting Using specutils</h2>
+        <p>…</p>
+      </section>
   </div>
-
-</article>
+</container>
