@@ -95,6 +95,7 @@ li {
  */
 h1, h2, h3, h4, h5, h6 {
   font-weight: $base-font-weight;
+  color: $navy-color;
 }
 
 
@@ -107,11 +108,11 @@ a {
   text-decoration: none;
 
   &:visited {
-    color: darken($brand-color, 15%);
+    color: $brand-dark;
   }
 
   &:hover {
-    color: $text-color;
+    color: $brand-light;
     text-decoration: underline;
   }
 
@@ -149,9 +150,9 @@ blockquote {
 pre,
 code {
   @include relative-font-size(0.9375);
-  border: 1px solid $grey-color-light;
+  border: 1px solid $navy-color-light;
   border-radius: 3px;
-  background-color: #eef;
+  background-color: $sky-color;
 }
 
 code {
