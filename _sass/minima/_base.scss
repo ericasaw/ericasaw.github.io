@@ -192,6 +192,12 @@ pre {
     max-width:         calc(#{$content-width});
     /*padding-right: $spacing-unit / 10;
     padding-left: $spacing-unit / 10;*/
+
+  @include media-query($on-palm) {
+    max-width: -webkit-calc(#{$content-width} - #{$spacing-unit});
+    max-width:         calc(#{$content-width} - #{$spacing-unit});
+    /*padding-right: $spacing-unit / 10;
+    padding-left: $spacing-unit / 10;*/
   }
 }
 

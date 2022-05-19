@@ -49,5 +49,5 @@ The spatial distribution of the IGRINS observations RRISA currently encompasses 
 The Raw component of RRISA includes all of the frames IGRINS observed before May 2021--Flats, Darks, Arcs, Targets & Standards--in their unedited form.
 However, we caution that the Raw component of RRISA is exactly that, unedited.
 Users should not expect all target names to be searchable or coordinates to be correct (particularly for observations at McDonald Observatory).
-The Reduced component of RRISA includes only the output data products from the IGRINS PipeLine Package [(IGRINS plp)](https://github.com/igrins/plp), names are tediously cross checked by hand to ensure accuracy, and coordinates are corrected when SIMBAD counterparts are available.  
+The Reduced component of RRISA includes only the output data products from the IGRINS PipeLine Package [(IGRINS plp)](https://github.com/igrins/plp), names are tediously cross checked by hand to ensure accuracy, and coordinates are corrected when SIMBAD counterparts are available.
 For more detail on each component of RRISA check out the corresponding tabs above!
