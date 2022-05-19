@@ -16,7 +16,7 @@ img { max-width: 100%; vertical-align: middle; }
 /** Figures */
 figure > img { display: block; }
 
-figcaption { font-size: 14px; }
+figcaption { font-size: 14px; text-align: center; }
 
 /** Lists */
 ul, ol { margin-left: 30px; }
@@ -105,11 +105,11 @@ table td { border: 1px solid #a7a7a7; }
 
 .footer-col { float: left; margin-bottom: 15px; padding-left: 15px; }
 
-.footer-col-1 { width: -webkit-calc(30% - (30px / 2)); width: calc(30% - (30px / 2)); }
+.footer-col-1 { width: -webkit-calc(30% - (30px / 2)); width: calc(30% - (30px / 2)); text-align: left; }
 
-.footer-col-2 { width: -webkit-calc(25% - (30px / 2)); width: calc(25% - (30px / 2)); }
+.footer-col-2 { width: -webkit-calc(25% - (30px / 2)); width: calc(25% - (30px / 2)); text-align: center; }
 
-.footer-col-3 { width: -webkit-calc(45% - (30px / 2)); width: calc(45% - (30px / 2)); }
+.footer-col-3 { width: -webkit-calc(45% - (30px / 2)); width: calc(45% - (30px / 2)); text-align: right; }
 
 @media screen and (max-width: 800px) { .footer-col-1, .footer-col-2 { width: -webkit-calc(40% - (30px / 2)); width: calc(40% - (30px / 2)); } .footer-col-3 { width: -webkit-calc(100% - (30px / 2)); width: calc(100% - (30px / 2)); } }
 

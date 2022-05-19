@@ -4,4 +4,4 @@
 
 layout: page
 ---
-![](images/IGRINS_and_RRISA.png){:style="display:block; margin-left:auto; margin-right:auto"}
+![RRISA Logo](images/IGRINS_and_RRISA.png){:style="display:block; margin-left:auto; margin-right:auto"}

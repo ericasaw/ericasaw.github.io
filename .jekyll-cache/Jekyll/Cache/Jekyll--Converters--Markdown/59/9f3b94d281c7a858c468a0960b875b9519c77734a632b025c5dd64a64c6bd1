@@ -1,0 +1,21 @@
+I"ú
+<h1>IGRINS</h1>
+<p>Immersion GRating INfrared Spectrometer (IGRINS) is a compact high-resolution near-infrared spectrograph which can cover the entire wavelength range between 1.45 and 2.45Î¼m in a single exposure with a resolving power of R~45,000.
+IGRINS was built in a partnership between the <a href="https://www.utexas.edu/">University of Texas at Austin</a> and the <a href="https://www.kasi.re.kr/eng/index">Korea Astronomy and Space-Science Institute (KASI)</a> with the expectation that it would be deployed to multiple facilities.
+Since commissioning in July 2014, IGRINS has been scheduled for more that 1000 nights on the <a href="https://mcdonald.utexas.edu/">2.7m Harlan J. Smith Telescope at McDonald Observatory</a>, the <a href="https://lowell.edu/research/telescopes-and-facilities/ldt/">4.3m Discovery Channel Telescope (now the Lowell Discovery Telescope) at Lowell Observatory</a>, and the <a href="https://www.gemini.edu/">8.1m Gemini South telescope</a>.
+IGRINS is a prototype for the <a href="https://www.gmt.iag.usp.br/en/projects/gmtnirs">GMTNIRS instrument</a>.</p>
+
+<p>We ask users of RRISA &amp; IGRINS to <strong><em>cite</em></strong> the following instrumentation papers when referencing
+IGRINS:</p>
+<ul>
+  <li><a href="https://ui.adsabs.harvard.edu/abs/2010SPIE.7735E..1MY/abstract">Yuk+ 2010</a>: Preliminary design of IGRINS (Immersion GRating INfrared Spectrograph)</li>
+  <li><a href="https://ui.adsabs.harvard.edu/abs/2010SPIE.7739E..4LW/abstract">Wang+ 2010</a>: Manufacturing of silicon immersion gratings for infrared spectrometers</li>
+  <li><a href="https://ui.adsabs.harvard.edu/abs/2012SPIE.8450E..2SG/abstract">Gully-Santiago+ 2012</a>: Near-infrared metrology of high-performance silicon immersion gratings</li>
+  <li><a href="https://ui.adsabs.harvard.edu/abs/2012SPIE.8450E..48M/abstract">Moon+ 2012</a>: Immersion grating mount design for IGRINS and GMTNIRS</li>
+  <li><a href="https://ui.adsabs.harvard.edu/abs/2012SPIE.8550E..1BH/abstract">Han+ 2012</a>: Alignment based on a no adjustment philosophy for the Immersion Grating Infrared Spectrometer (IGRINS)</li>
+  <li><a href="https://ui.adsabs.harvard.edu/abs/2014SPIE.9147E..1DP/abstract">Park+ 2014</a>: Design and early performance of IGRINS (Immersion Grating Infrared Spectrometer)</li>
+  <li><a href="https://ui.adsabs.harvard.edu/abs/2014SPIE.9147E..39O/abstract">Oh+ 2014</a>: Mechanical design of mounts for IGRINS focal plane arrays and field flattening lenses</li>
+  <li><a href="https://ui.adsabs.harvard.edu/abs/2014SPIE.9154E..1XJ/abstract">Jeong+ 2014</a>: Characterization and optimization for detector systems of IGRINS</li>
+  <li><a href="https://ui.adsabs.harvard.edu/abs/2016SPIE.9908E..0CM/abstract">Mace+ 2016</a>: 300 nights of science with IGRINS at McDonald Observatory</li>
+</ul>
+:ET
