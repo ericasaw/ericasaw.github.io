@@ -7,16 +7,34 @@ title: The Raw
 permalink: /RRISA_raw/
 ---
 
-<h1>Raw Data Files</h1>
-a brief introduction here
+<h1>Raw IGRINS Files</h1>
+The Raw component of RRISA includes all of the frames IGRINS has ever observed before May 2021 including Flats, Darks, Arcs, Targets, and Standards.
+This includes images that are not suitable for science like partial frames, frames with incorrect exposure times, or mislabeled frames.
+RRISA includes all of the night logs and paper logs for all of the IGRINS observations.
+We highly recommend that users of the Raw component consult the paper logs for any observations pre-Gemini South to confirm all of the frames for any particular target are suitable for science before reducing a target spectra.
 
-Downloadable from [our github](https://github.com/IGRINScontact/RRISA.git) as a .csv or .xls or see the spreadsheet embedded below.
+Downloadable from [our GitHub](https://github.com/IGRINScontact/RRISA.git) as a .csv or .xls or see the spreadsheet embedded below for quick ctr+f/cmd+f searching.
 
-<h3>IGRINS plp</h3>
-I think we should put the IGRINS plp tutorial information here
+For a more detailed description of the Raw RRISA header, check out the readme_raw.md in [our GitHub](https://github.com/IGRINScontact/RRISA.git).
 
-<h3>Disclaimers</h3>
-need to describe some caveats here about the raw superlog.
+<h3>IGRINS Observations</h3>
+Raw data from IGRINS includes the ‘SDCS’ slit-viewer images, ‘SDCH’ two-dimensional H-band echellogram, and ‘SDCK’ two-dimensional K-band echellogram.
+IGRINS simultaneously observes the H and K spectra, and file numbers match for the two bands.
+Slit-viewer images are generally saved during target acquisition and guiding.
+An on chip image example of the IGRINS H and K band spectra can be seen below.
+
+<center>
+  <figure>
+    <img src="/images/IGRINS_on_chip.png" alt="IGRINS H and K Band on Chip Spectra"/>
+    <figcaption>An example of an AB sky-subtracted image of an emission line source observed with IGRINS
+    for both H and K Band.</figcaption>
+  </figure>
+</center>
+
+The IGRINS slit dimensions (width x length) in arcseconds are 0.34x5 at Gemini South, 0.63x9.3 at Lowell’s Discovery Telescope, and 1x15 at McDonald Observatory.
+Point sources (anything with a seeing limited image on the slit-viewer) are generally observed in two positions on the slit.
+The two positions, A and B, are separated by half a slit length.
+
 
 <h3>Embedded Spreadsheet</h3>
 <iframe title="A test RRISA google sheet insert" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRtfBHWcplfpXJvxq2-PVoxkubwwTuQQtsvdTuTTdPxxWFpJKp3MPzPNhH0Eur87F8nytKgOLKwbyY6/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false" height="100%" width="100%"></iframe>

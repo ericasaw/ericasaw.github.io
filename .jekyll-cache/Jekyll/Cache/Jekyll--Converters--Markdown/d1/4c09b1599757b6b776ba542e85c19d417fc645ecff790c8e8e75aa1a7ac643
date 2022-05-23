@@ -1,0 +1,12 @@
+I"Ì<h1>Reduced &amp; Crossmatched</h1>
+<p>For objects in the IGRINS sample that are searchable via SIMBAD, we can crossmatch with other catalogs to provide additional information.
+In the beta version of RRISA we support crossmatching with <a href="https://ui.adsabs.harvard.edu/abs/2003yCat.2246....0C/abstract">2MASS</a>, <a href="https://ui.adsabs.harvard.edu/abs/2020AJ....160..120J/abstract">APOGEE</a>, <a href="https://ui.adsabs.harvard.edu/abs/2020yCat.1350....0G/abstract">Gaia EDR3</a>, <a href="https://ui.adsabs.harvard.edu/abs/2018A%26A...616A...1G/abstract">Gaia DR2</a>, and <a href="https://ui.adsabs.harvard.edu/abs/2016A%26A...591A.118S/abstract">PASTEL</a>.</p>
+
+<p>Downloadable from <a href="https://github.com/IGRINScontact/RRISA.git">our github</a> as a .csv or .xls or see the spreadsheet embedded below.</p>
+
+<h3>Object Matching</h3>
+<p>need to describe some object matching caveats here.</p>
+
+<h3>Embedded Spreadsheet</h3>
+<iframe title="A test RRISA google sheet insert" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRtfBHWcplfpXJvxq2-PVoxkubwwTuQQtsvdTuTTdPxxWFpJKp3MPzPNhH0Eur87F8nytKgOLKwbyY6/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false" height="100%" width="100%"></iframe>
+:ET

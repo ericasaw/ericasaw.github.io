@@ -8,8 +8,8 @@
 <meta property="og:title" content="The Raw" />
 <meta name="author" content="Contact the IGRINS Team!" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
-<meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<meta name="description" content="The Immersion Grating Infrared Spectrometer (IGRINS) was developed under a collaboration between the University of Texas at Austin and the Korea Astronomy and Space Science Institute (KASI) with the financial support of the US National Science Foundation under grants AST-1229522, AST-1702267 and AST-1908892, McDonald Observatory of the University of Texas at Austin, the Korean GMT Project of KASI, the Mt. Cuba Astronomical Foundation and Gemini Observatory." />
+<meta property="og:description" content="The Immersion Grating Infrared Spectrometer (IGRINS) was developed under a collaboration between the University of Texas at Austin and the Korea Astronomy and Space Science Institute (KASI) with the financial support of the US National Science Foundation under grants AST-1229522, AST-1702267 and AST-1908892, McDonald Observatory of the University of Texas at Austin, the Korean GMT Project of KASI, the Mt. Cuba Astronomical Foundation and Gemini Observatory." />
 <link rel="canonical" href="http://localhost:4000/RRISA_raw/" />
 <meta property="og:url" content="http://localhost:4000/RRISA_raw/" />
 <meta property="og:site_name" content="The Raw &amp; Reduced IGRINS Spectral Archive" />
@@ -17,7 +17,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="The Raw" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Contact the IGRINS Team!"},"description":"Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.","headline":"The Raw","url":"http://localhost:4000/RRISA_raw/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Contact the IGRINS Team!"},"description":"The Immersion Grating Infrared Spectrometer (IGRINS) was developed under a collaboration between the University of Texas at Austin and the Korea Astronomy and Space Science Institute (KASI) with the financial support of the US National Science Foundation under grants AST-1229522, AST-1702267 and AST-1908892, McDonald Observatory of the University of Texas at Austin, the Korean GMT Project of KASI, the Mt. Cuba Astronomical Foundation and Gemini Observatory.","headline":"The Raw","url":"http://localhost:4000/RRISA_raw/"}</script>
 <!-- End Jekyll SEO tag -->
  
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -34,7 +34,7 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/RRISA_raw/">The Raw</a><a class="page-link" href="/RRISA_reduced/">The Reduced</a><a class="page-link" href="/about/">About</a><a class="page-link" href="/tutorials/">Tutorials</a></div>
+        <div class="trigger"><a class="page-link" href="/RRISA_raw/">The Raw</a><a class="page-link" href="/RRISA_reduced/">The Reduced</a><a class="page-link" href="/RRISA_xmatch/">The XMatch</a><a class="page-link" href="/about/">About</a><a class="page-link" href="/tutorials/">Tutorials</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -42,16 +42,33 @@
         <article class="post">
 
   <div class="post-content">
-    <h1>Raw Data Files</h1>
-<p>a brief introduction here</p>
+    <h1>Raw IGRINS Files</h1>
+<p>The Raw component of RRISA includes all of the frames IGRINS has ever observed before May 2021 including Flats, Darks, Arcs, Targets, and Standards.
+This includes images that are not suitable for science like partial frames, frames with incorrect exposure times, or mislabeled frames.
+RRISA includes all of the night logs and paper logs for all of the IGRINS observations.
+We highly recommend that users of the Raw component consult the paper logs for any observations pre-Gemini South to confirm all of the frames for any particular target are suitable for science before reducing a target spectra.</p>
 
-<p>Downloadable from <a href="https://github.com/IGRINScontact/RRISA.git">our github</a> as a .csv or .xls or see the spreadsheet embedded below.</p>
+<p>Downloadable from <a href="https://github.com/IGRINScontact/RRISA.git">our GitHub</a> as a .csv or .xls or see the spreadsheet embedded below for quick ctr+f/cmd+f searching.</p>
 
-<h3>IGRINS plp</h3>
-<p>I think we should put the IGRINS plp tutorial information here</p>
+<p>For a more detailed description of the Raw RRISA header, check out the readme_raw.md in <a href="https://github.com/IGRINScontact/RRISA.git">our GitHub</a>.</p>
 
-<h3>Disclaimers</h3>
-<p>need to describe some caveats here about the raw superlog.</p>
+<h3>IGRINS Observations</h3>
+<p>Raw data from IGRINS includes the ‘SDCS’ slit-viewer images, ‘SDCH’ two-dimensional H-band echellogram, and ‘SDCK’ two-dimensional K-band echellogram.
+IGRINS simultaneously observes the H and K spectra, and file numbers match for the two bands.
+Slit-viewer images are generally saved during target acquisition and guiding.
+An on chip image example of the IGRINS H and K band spectra can be seen below.</p>
+
+<center>
+  <figure>
+    <img src="/images/IGRINS_on_chip.png" alt="IGRINS H and K Band on Chip Spectra" />
+    <figcaption>An example of an AB sky-subtracted image of an emission line source observed with IGRINS
+    for both H and K Band.</figcaption>
+  </figure>
+</center>
+
+<p>The IGRINS slit dimensions (width x length) in arcseconds are 0.34x5 at Gemini South, 0.63x9.3 at Lowell’s Discovery Telescope, and 1x15 at McDonald Observatory.
+Point sources (anything with a seeing limited image on the slit-viewer) are generally observed in two positions on the slit.
+The two positions, A and B, are separated by half a slit length.</p>
 
 <h3>Embedded Spreadsheet</h3>
 <iframe title="A test RRISA google sheet insert" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRtfBHWcplfpXJvxq2-PVoxkubwwTuQQtsvdTuTTdPxxWFpJKp3MPzPNhH0Eur87F8nytKgOLKwbyY6/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false" height="100%" width="100%"></iframe>
@@ -73,11 +90,11 @@
       </div>
 
       <div class="footer-col footer-col-2">
-        Submit feedback & questions through our github!<ul class="social-media-list"><li><a href="https://github.com/IGRINScontact"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">IGRINScontact</span></a></li></ul>
+        Submit feedback & questions through our GitHub!<ul class="social-media-list"><li><a href="https://github.com/IGRINScontact"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">IGRINScontact</span></a></li></ul>
 </div>
 
       <div class="footer-col footer-col-3">
-        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+        <p>The Immersion Grating Infrared Spectrometer (IGRINS) was developed under a collaboration between the University of Texas at Austin and the Korea Astronomy and Space Science Institute (KASI) with the financial support of the US National Science Foundation under grants AST-1229522, AST-1702267 and AST-1908892, McDonald Observatory of the University of Texas at Austin, the Korean GMT Project of KASI, the Mt. Cuba Astronomical Foundation and Gemini Observatory.</p>
       </div>
     </div>
 

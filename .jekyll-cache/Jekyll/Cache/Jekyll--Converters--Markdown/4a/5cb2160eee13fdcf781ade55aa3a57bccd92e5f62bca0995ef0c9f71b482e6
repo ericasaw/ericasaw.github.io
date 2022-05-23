@@ -1,0 +1,93 @@
+I"0<h1>Reduced &amp; Crossmatched</h1>
+<p>For objects in the IGRINS sample that are searchable via SIMBAD, we can crossmatch with other catalogs to provide additional information.
+In the beta version of RRISA we support crossmatching with <a href="https://ui.adsabs.harvard.edu/abs/2003yCat.2246....0C/abstract">2MASS</a>, <a href="https://ui.adsabs.harvard.edu/abs/2020AJ....160..120J/abstract">APOGEE</a>, <a href="https://ui.adsabs.harvard.edu/abs/2020yCat.1350....0G/abstract">Gaia EDR3</a>, <a href="https://ui.adsabs.harvard.edu/abs/2018A%26A...616A...1G/abstract">Gaia DR2</a>, and <a href="https://ui.adsabs.harvard.edu/abs/2016A%26A...591A.118S/abstract">PASTEL</a>.</p>
+
+<p>Downloadable from <a href="https://github.com/IGRINScontact/RRISA.git">our github</a> as a .csv or .xls or see the spreadsheet embedded below for quick ctr+f/cmd+f searching.</p>
+
+<h3>Object Matching</h3>
+<p>The crossmatching for RRISA errs on the side of caution in an effort to reduce misidentification of objects.
+Crossmatching is possible through <a href="https://astroquery.readthedocs.io/en/latest/xmatch/xmatch.html">xMatch Queries</a> via <a href="https://astroquery.readthedocs.io/en/latest/index.html">astroquery</a> and is undertaken through the following:</p>
+<ul>
+  <li>Using xMatch Queries to find objects in the corresponding catalog within 1 arcsec of the object’s SIMBAD coordinates</li>
+  <li>With the identifiers returned from the above step, query SIMBAD</li>
+  <li>Compare the names of the objects from the two queries and remove catalog results for objects without matching names.</li>
+</ul>
+
+<p>The flag column for each catalog will either have a value of 0 or 1.
+A flag of 1 means that the identifier returned from the xMatch Query is not SIMBAD searchable.
+In this case the objects could match, but we suggest that the user manually check to confirm.</p>
+
+<h3>Additional Columns</h3>
+<p>In addition to the IGRINS information we add the following from each catalog:</p>
+<ul>
+  <li>SIMBAD
+    <ul>
+      <li>the primary ID</li>
+      <li>all of the IDs for the object</li>
+      <li>SIMBAD object type</li>
+      <li>spectral type</li>
+      <li>spectral type quality A–&gt;E (best–&gt;worst)</li>
+      <li>propermotion RA</li>
+      <li>propermotion DEC</li>
+      <li>radial velocity</li>
+      <li>parallax</li>
+      <li>U, B, V, R, G, I, J, H, K magnitudes</li>
+      <li>Teff</li>
+      <li>logg</li>
+      <li>[Fe/H]</li>
+    </ul>
+  </li>
+  <li>2MASS
+    <ul>
+      <li>2MASS identifier</li>
+      <li>J, H, K magnitudes</li>
+    </ul>
+  </li>
+  <li>Gaia EDR3
+    <ul>
+      <li>Gaia EDR3 identifier</li>
+      <li>parallax</li>
+      <li>G_bp - G_rp</li>
+      <li>G_bp - G_rp excess factor</li>
+      <li>G magnitude</li>
+    </ul>
+  </li>
+  <li>Gaia DR2
+    <ul>
+      <li>Gaia DR2 identifier</li>
+      <li>proper motion RA</li>
+      <li>proper motion DEC</li>
+      <li>G_bp - G_rp</li>
+      <li>G_bp - G_rp excess factor</li>
+      <li>G magnitude</li>
+      <li>radial velocity</li>
+      <li>Teff</li>
+      <li>estimate of extinction in the G band from Apsis-Priam</li>
+      <li>radius</li>
+      <li>luminosity</li>
+    </ul>
+  </li>
+  <li>APOGEE
+    <ul>
+      <li>radial velocity</li>
+      <li>Teff</li>
+      <li>logg</li>
+      <li>vsini</li>
+      <li>[M/H]</li>
+      <li>[alpha/H]</li>
+      <li>[Fe/H]</li>
+    </ul>
+  </li>
+  <li>PASTEL
+    <ul>
+      <li>Teff</li>
+      <li>logg</li>
+      <li>[Fe/H]
+For a more detailed description of the RRISA header, check out the readme_xmatch.md in our github.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3>Embedded Spreadsheet</h3>
+<iframe title="A test RRISA google sheet insert" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRtfBHWcplfpXJvxq2-PVoxkubwwTuQQtsvdTuTTdPxxWFpJKp3MPzPNhH0Eur87F8nytKgOLKwbyY6/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false" height="100%" width="100%"></iframe>
+:ET

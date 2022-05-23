@@ -22,9 +22,11 @@ title: The Raw & Reduced IGRINS Spectral Archive
 author: Contact the IGRINS Team!
 email: igrins.contact@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  The Immersion Grating Infrared Spectrometer (IGRINS) was developed under a collaboration
+  between the University of Texas at Austin and the Korea Astronomy and Space Science Institute (KASI)
+  with the financial support of the US National Science Foundation under grants AST-1229522, AST-1702267
+  and AST-1908892, McDonald Observatory of the University of Texas at Austin, the Korean GMT Project of
+  KASI, the Mt. Cuba Astronomical Foundation and Gemini Observatory.
 #baseurl: "/docs" # the subpath of your site, e.g. /blog
 #url: "" # the base hostname & protocol for your site, e.g. http://example.com
 #domain: ericasaw.github.io

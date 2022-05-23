@@ -8,8 +8,8 @@
 <meta property="og:title" content="Tutorials" />
 <meta name="author" content="Contact the IGRINS Team!" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
-<meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<meta name="description" content="The Immersion Grating Infrared Spectrometer (IGRINS) was developed under a collaboration between the University of Texas at Austin and the Korea Astronomy and Space Science Institute (KASI) with the financial support of the US National Science Foundation under grants AST-1229522, AST-1702267 and AST-1908892, McDonald Observatory of the University of Texas at Austin, the Korean GMT Project of KASI, the Mt. Cuba Astronomical Foundation and Gemini Observatory." />
+<meta property="og:description" content="The Immersion Grating Infrared Spectrometer (IGRINS) was developed under a collaboration between the University of Texas at Austin and the Korea Astronomy and Space Science Institute (KASI) with the financial support of the US National Science Foundation under grants AST-1229522, AST-1702267 and AST-1908892, McDonald Observatory of the University of Texas at Austin, the Korean GMT Project of KASI, the Mt. Cuba Astronomical Foundation and Gemini Observatory." />
 <link rel="canonical" href="http://localhost:4000/tutorials/" />
 <meta property="og:url" content="http://localhost:4000/tutorials/" />
 <meta property="og:site_name" content="The Raw &amp; Reduced IGRINS Spectral Archive" />
@@ -17,7 +17,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Tutorials" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Contact the IGRINS Team!"},"description":"Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.","headline":"Tutorials","url":"http://localhost:4000/tutorials/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Contact the IGRINS Team!"},"description":"The Immersion Grating Infrared Spectrometer (IGRINS) was developed under a collaboration between the University of Texas at Austin and the Korea Astronomy and Space Science Institute (KASI) with the financial support of the US National Science Foundation under grants AST-1229522, AST-1702267 and AST-1908892, McDonald Observatory of the University of Texas at Austin, the Korean GMT Project of KASI, the Mt. Cuba Astronomical Foundation and Gemini Observatory.","headline":"Tutorials","url":"http://localhost:4000/tutorials/"}</script>
 <!-- End Jekyll SEO tag -->
  
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -34,7 +34,7 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/RRISA_raw/">The Raw</a><a class="page-link" href="/RRISA_reduced/">The Reduced</a><a class="page-link" href="/about/">About</a><a class="page-link" href="/tutorials/">Tutorials</a></div>
+        <div class="trigger"><a class="page-link" href="/RRISA_raw/">The Raw</a><a class="page-link" href="/RRISA_reduced/">The Reduced</a><a class="page-link" href="/RRISA_xmatch/">The XMatch</a><a class="page-link" href="/about/">About</a><a class="page-link" href="/tutorials/">Tutorials</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -49,6 +49,7 @@ html {
 test > nav {
   position: sticky;
   align-self: start;
+  top: 2rem;
 }
 
 /* Sidebar Navigation */
@@ -88,6 +89,7 @@ container {
   <nav class="section-nav">
     <ol>
       <li><a href="#box">UTBox</a></li>
+      <li><a href="#plp">IGRINS plp</a></li>
       <li><a href="#muler">Quick Look</a></li>
       <li><a href="#specutils">Line Fitting</a></li>
     </ol>
@@ -96,6 +98,9 @@ container {
       <section id="box">
         <h2>Querying UTBox with Python</h2>
         <p>This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at</p>
+      </section>
+      <section id="plp">
+        <h2>Reduce Raw IGRINS Spectra Using The IGRINS PipeLine Package (IGRINS plp)</h2>
       </section>
       <section id="muler">
         <h2>Quicklook IGRINS Spectra Using muler</h2>
@@ -121,11 +126,11 @@ container {
       </div>
 
       <div class="footer-col footer-col-2">
-        Submit feedback & questions through our github!<ul class="social-media-list"><li><a href="https://github.com/IGRINScontact"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">IGRINScontact</span></a></li></ul>
+        Submit feedback & questions through our GitHub!<ul class="social-media-list"><li><a href="https://github.com/IGRINScontact"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">IGRINScontact</span></a></li></ul>
 </div>
 
       <div class="footer-col footer-col-3">
-        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+        <p>The Immersion Grating Infrared Spectrometer (IGRINS) was developed under a collaboration between the University of Texas at Austin and the Korea Astronomy and Space Science Institute (KASI) with the financial support of the US National Science Foundation under grants AST-1229522, AST-1702267 and AST-1908892, McDonald Observatory of the University of Texas at Austin, the Korean GMT Project of KASI, the Mt. Cuba Astronomical Foundation and Gemini Observatory.</p>
       </div>
     </div>
 

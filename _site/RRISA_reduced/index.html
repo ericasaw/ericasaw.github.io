@@ -8,8 +8,8 @@
 <meta property="og:title" content="The Reduced" />
 <meta name="author" content="Contact the IGRINS Team!" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
-<meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<meta name="description" content="The Immersion Grating Infrared Spectrometer (IGRINS) was developed under a collaboration between the University of Texas at Austin and the Korea Astronomy and Space Science Institute (KASI) with the financial support of the US National Science Foundation under grants AST-1229522, AST-1702267 and AST-1908892, McDonald Observatory of the University of Texas at Austin, the Korean GMT Project of KASI, the Mt. Cuba Astronomical Foundation and Gemini Observatory." />
+<meta property="og:description" content="The Immersion Grating Infrared Spectrometer (IGRINS) was developed under a collaboration between the University of Texas at Austin and the Korea Astronomy and Space Science Institute (KASI) with the financial support of the US National Science Foundation under grants AST-1229522, AST-1702267 and AST-1908892, McDonald Observatory of the University of Texas at Austin, the Korean GMT Project of KASI, the Mt. Cuba Astronomical Foundation and Gemini Observatory." />
 <link rel="canonical" href="http://localhost:4000/RRISA_reduced/" />
 <meta property="og:url" content="http://localhost:4000/RRISA_reduced/" />
 <meta property="og:site_name" content="The Raw &amp; Reduced IGRINS Spectral Archive" />
@@ -17,7 +17,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="The Reduced" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Contact the IGRINS Team!"},"description":"Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.","headline":"The Reduced","url":"http://localhost:4000/RRISA_reduced/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Contact the IGRINS Team!"},"description":"The Immersion Grating Infrared Spectrometer (IGRINS) was developed under a collaboration between the University of Texas at Austin and the Korea Astronomy and Space Science Institute (KASI) with the financial support of the US National Science Foundation under grants AST-1229522, AST-1702267 and AST-1908892, McDonald Observatory of the University of Texas at Austin, the Korean GMT Project of KASI, the Mt. Cuba Astronomical Foundation and Gemini Observatory.","headline":"The Reduced","url":"http://localhost:4000/RRISA_reduced/"}</script>
 <!-- End Jekyll SEO tag -->
  
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -34,7 +34,7 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/RRISA_raw/">The Raw</a><a class="page-link" href="/RRISA_reduced/">The Reduced</a><a class="page-link" href="/about/">About</a><a class="page-link" href="/tutorials/">Tutorials</a></div>
+        <div class="trigger"><a class="page-link" href="/RRISA_raw/">The Raw</a><a class="page-link" href="/RRISA_reduced/">The Reduced</a><a class="page-link" href="/RRISA_xmatch/">The XMatch</a><a class="page-link" href="/about/">About</a><a class="page-link" href="/tutorials/">Tutorials</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -43,18 +43,51 @@
 
   <div class="post-content">
     <h1>Reduced Data Products</h1>
-<p>a brief introduction here</p>
+<p>All of the existing IGRINS data has been hand reduced using the <a href="https://github.com/igrins/plp">(IGRINS plp)</a>.
+The Reduced version of RRISA includes different names for targets than the Raw component.
+These are names that have been painstakingly corrected by manually searching through the IGRINS paper logs for handwritten coordinates and names, through SIMBAD for nomenclature corrections and coordinate offsets.
+Targets that are subcomponents of systems or extended sources keep their identifier, and if not SIMBAD searchable, do not have any additional information added in the XMatch component of RRISA.
+The original names for all of the targets remain for reference to the Raw component.
+If users find anything that appears to be a misidentification we ask that they report it by raising a GitHub issue.</p>
 
-<p>Downloadable from <a href="https://github.com/IGRINScontact/RRISA.git">our github</a> as a .csv or .xls or see the spreadsheet embedded below.</p>
+<p>Downloadable from <a href="https://github.com/IGRINScontact/RRISA.git">our GitHub</a> as a .csv or .xls or see the spreadsheet embedded below for quick ctr+f/cmd+f searching.</p>
+
+<p>For a more detailed description of the Reduced RRISA header, check out the readme_reduced.md in <a href="https://github.com/IGRINScontact/RRISA.git">our GitHub</a>.</p>
 
 <h3>Data Reduction</h3>
-<p>description of IGRINSplp here + caveats of rereducing and a link to the tutorials section on the raw page when it is
-created</p>
+<p>IGRINS reduced data have been processed with the <a href="https://github.com/igrins/plp">IGRINS Pipeline Package (PLP)</a> see <a href="https://zenodo.org/record/845059#.Yolg-C-cawA">Lee+ 2017</a>.</p>
 
-<h3>Object Matching</h3>
-<p>need to describe some object matching caveats here.</p>
+<p>The PLP optimally extracts 1D spectra, telluric corrects, and provides 2D rectified spectra for post-processing.<br />
+Wavelength solutions are determined using OH emission lines, and are then refined using telluric absorption lines in the telluric standard.
+Telluric standards were generally A0V stars, which are Vega corrected using a <a href="http://kurucz.harvard.edu/stars.html.">model of the Vega spectrum</a> (<a href="https://github.com/igrins/plp/blob/master/master_calib/A0V/vegallpr25.50000resam5.npy">see the file in the PLP</a>).</p>
+
+<p>The PLP outputs several files for each reduction:</p>
+<ol>
+  <li><strong>spec_A0v.fits:</strong> The A0 flattened and Vega flux corrected target spectra. This fits files includes the original data used to create the reduced spectrum. Each extension is a 2048x28 array with the same header (except for the PRIMARY extension) other than the EXTNAME. The following details the differences between each of the EXTNAMEs:
+    <ul>
+      <li><em>[0]-Primary:</em> The corrected target spectrum = (TGT_SPEC/A0V_SPEC)*VEGA_SPEC</li>
+      <li><em>[1]-Wavelength:</em> The wavelength solution - in um (so 1.42um for instance)</li>
+      <li><em>[2]-TGT_SPEC:</em> The extracted target spectrum (from the target spec.fits file)</li>
+      <li><em>[3]-A0V_SPEC:</em> The extracted A0V spectrum (from the A0V spec.fits file)</li>
+      <li><em>[4]-VEGA_SPEC:</em> A model of the Vega spectrum (<a href="https://github.com/igrins/plp/blob/master/master_calib/A0V/vegallpr25.50000resam5.npy">see the file in the PLP</a> or for more detailed info regarding the file see this <a href="http://kurucz.harvard.edu/stars.html">link</a>).</li>
+    </ul>
+  </li>
+  <li><strong>sn.fits</strong> (for both target and A0): Signal-to-Noise per pixel matching to the spec.fits output.</li>
+  <li><strong>variance.fits</strong> (for both target and A0): Variance per pixel matching spec.fits output.</li>
+  <li><strong>spec.fits</strong> (for both target and A0): The source spectrum. It says the spectral unit is ADUs.</li>
+  <li><strong>spec_flattened.fits</strong> (A0): The flattened A0 spectrum.</li>
+  <li><strong>spec2d.fits</strong> (for both target and A0): the two dimension spectrum</li>
+  <li><strong>var2d.fits</strong> (for both target and A0): the two dimensional variance</li>
+  <li><strong>wave.fits</strong> (for both target and A0): The vacuum wavelength solution for a given source, in nm (so 1429nm for instance).</li>
+</ol>
+
+<p><strong><em>Note:</em></strong> <em>The output files from the IGRINS PLP are an in vacuum wavelength solution. Fit models are offset from expected line positions by 80-120 km/s the models are likely in air and not vacuum. The IAU standard conversion for air to vacuum wavelengths is given by <a href="https://ui.adsabs.harvard.edu/abs/1991ApJS...77..119M/abstract">Morton 1991</a>. For vacuum wavelengths (VAC) in Angstroms and convert to air wavelength (AIR) via:</em></p>
+<center>
+<em>AIR = VAC / (1.0 + 2.735182E-4 + (131.4182 / VAC^2) + (2.76249E8 / VAC^4))</em>
+</center>
 
 <h3>Embedded Spreadsheet</h3>
+<p>this is a test spreadsheet, not the actual one that will go here</p>
 <iframe title="A test RRISA google sheet insert" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRtfBHWcplfpXJvxq2-PVoxkubwwTuQQtsvdTuTTdPxxWFpJKp3MPzPNhH0Eur87F8nytKgOLKwbyY6/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false" height="100%" width="100%"></iframe>
 
   </div>
@@ -74,11 +107,11 @@ created</p>
       </div>
 
       <div class="footer-col footer-col-2">
-        Submit feedback & questions through our github!<ul class="social-media-list"><li><a href="https://github.com/IGRINScontact"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">IGRINScontact</span></a></li></ul>
+        Submit feedback & questions through our GitHub!<ul class="social-media-list"><li><a href="https://github.com/IGRINScontact"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">IGRINScontact</span></a></li></ul>
 </div>
 
       <div class="footer-col footer-col-3">
-        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+        <p>The Immersion Grating Infrared Spectrometer (IGRINS) was developed under a collaboration between the University of Texas at Austin and the Korea Astronomy and Space Science Institute (KASI) with the financial support of the US National Science Foundation under grants AST-1229522, AST-1702267 and AST-1908892, McDonald Observatory of the University of Texas at Austin, the Korean GMT Project of KASI, the Mt. Cuba Astronomical Foundation and Gemini Observatory.</p>
       </div>
     </div>
 

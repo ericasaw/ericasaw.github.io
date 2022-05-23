@@ -55,6 +55,7 @@
     border: 1px solid $navy-color;
     border-radius: 2px;
     text-align: right;
+    padding-top: 50px;
 
     label[for="nav-trigger"] {
       display: block;
@@ -71,11 +72,11 @@
       width: 36px;
       height: 26px;
       line-height: 0;
-      padding-top: 10px;
+      padding-top: 60px;
       text-align: center;
 
       > svg {
-        fill: $grey-color-dark;
+        fill: $navy-color;
       }
     }
 
@@ -109,13 +110,14 @@
 .site-footer {
   border-top: 2px solid $navy-color;
   border-bottom: 2px solid $navy-color;
-  padding: $spacing-unit 0;
+  padding: 5px 0;
   background: $sky-color;
 }
 
 .footer-heading {
-  @include relative-font-size(1.125);
-  margin-bottom: $spacing-unit / 2;
+  @include relative-font-size(0.1);
+  color: $text-color;
+  text-align: center;
 }
 
 .contact-list,
@@ -133,26 +135,31 @@
 
 .footer-col {
   float: left;
-  margin-bottom: $spacing-unit / 2;
+  /*margin-bottom: $spacing-unit / 2;*/
   padding-left: $spacing-unit / 2;
 }
 
 .footer-col-1 {
-  width: -webkit-calc(30% - (#{$spacing-unit} / 2));
-  width:         calc(30% - (#{$spacing-unit} / 2));
-  text-align: left;
+  width: -webkit-calc(25% - (#{$spacing-unit} / 2));
+  width:         calc(25% - (#{$spacing-unit} / 2));
+  text-align: center;
+  padding-top: 15px;
 }
 
 .footer-col-2 {
   width: -webkit-calc(25% - (#{$spacing-unit} / 2));
   width:         calc(25% - (#{$spacing-unit} / 2));
   text-align: center;
+  padding-top: 15px;
 }
 
 .footer-col-3 {
-  width: -webkit-calc(45% - (#{$spacing-unit} / 2));
-  width:         calc(45% - (#{$spacing-unit} / 2));
-  text-align: right;
+  width: -webkit-calc(50% - (#{$spacing-unit} / 2));
+  width:         calc(50% - (#{$spacing-unit} / 2));
+  text-align: center;
+  @include relative-font-size(0.7375);
+  font-style: italic;
+  padding-top: 15px;
 }
 
 @include media-query($on-laptop) {
