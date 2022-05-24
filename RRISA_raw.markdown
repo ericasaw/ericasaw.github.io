@@ -13,10 +13,6 @@ This includes images that are not suitable for science like partial frames, fram
 RRISA includes all of the night logs and paper logs for all of the IGRINS observations.
 We highly recommend that users of the Raw component consult the paper logs for any observations pre-Gemini South to confirm all of the frames for any particular target are suitable for science before reducing a target spectra.
 
-Downloadable from [our GitHub](https://github.com/IGRINScontact/RRISA.git) as a .csv or .xls or see the spreadsheet embedded below for quick ctr+f/cmd+f searching.
-
-For a more detailed description of the Raw RRISA header, check out the readme_raw.md in [our GitHub](https://github.com/IGRINScontact/RRISA.git).
-
 <h3>IGRINS Observations</h3>
 Raw data from IGRINS includes the ‘SDCS’ slit-viewer images, ‘SDCH’ two-dimensional H-band echellogram, and ‘SDCK’ two-dimensional K-band echellogram.
 IGRINS simultaneously observes the H and K spectra, and file numbers match for the two bands.
@@ -36,5 +32,10 @@ Point sources (anything with a seeing limited image on the slit-viewer) are gene
 The two positions, A and B, are separated by half a slit length.
 
 
-<h3>Embedded Spreadsheet</h3>
+<h3>RRISA Raw</h3>
+
+Downloadable from [our GitHub](https://github.com/IGRINScontact/RRISA.git) as a .csv or .xls or see the spreadsheet embedded below for quick ctr+f/cmd+f searching.
+
+For a more detailed description of the Raw RRISA header, check out the readme_raw.md in [our GitHub](https://github.com/IGRINScontact/RRISA.git).
+
 <iframe title="A test RRISA google sheet insert" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRtfBHWcplfpXJvxq2-PVoxkubwwTuQQtsvdTuTTdPxxWFpJKp3MPzPNhH0Eur87F8nytKgOLKwbyY6/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false" height="100%" width="100%"></iframe>

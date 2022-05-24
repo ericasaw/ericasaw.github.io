@@ -15,10 +15,6 @@ Targets that are subcomponents of systems or extended sources keep their identif
 The original names for all of the targets remain for reference to the Raw component.
 If users find anything that appears to be a misidentification we ask that they report it by raising a GitHub issue.
 
-Downloadable from [our GitHub](https://github.com/IGRINScontact/RRISA.git) as a .csv or .xls or see the spreadsheet embedded below for quick ctr+f/cmd+f searching.
-
-For a more detailed description of the Reduced RRISA header, check out the readme_reduced.md in [our GitHub](https://github.com/IGRINScontact/RRISA.git).
-
 <h3>Data Reduction</h3>
 IGRINS reduced data have been processed with the [IGRINS Pipeline Package (PLP)](https://github.com/igrins/plp) see [Lee+ 2017](https://zenodo.org/record/845059#.Yolg-C-cawA).
 
@@ -46,6 +42,10 @@ __*Note:*__ _The output files from the IGRINS PLP are an in vacuum wavelength so
 <em>AIR = VAC / (1.0 + 2.735182E-4 + (131.4182 / VAC^2) + (2.76249E8 / VAC^4))</em>
 </center>
 
-<h3>Embedded Spreadsheet</h3>
+<h3>RRISA Reduced</h3>
+Downloadable from [our GitHub](https://github.com/IGRINScontact/RRISA.git) as a .csv or .xls or see the spreadsheet embedded below for quick ctr+f/cmd+f searching.
+
+For a more detailed description of the Reduced RRISA header, check out the readme_reduced.md in [our GitHub](https://github.com/IGRINScontact/RRISA.git).
+
 this is a test spreadsheet, not the actual one that will go here
 <iframe title="A test RRISA google sheet insert" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRtfBHWcplfpXJvxq2-PVoxkubwwTuQQtsvdTuTTdPxxWFpJKp3MPzPNhH0Eur87F8nytKgOLKwbyY6/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false" height="100%" width="100%"></iframe>
