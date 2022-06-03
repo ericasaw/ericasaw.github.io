@@ -75,9 +75,9 @@ Telluric standards were generally A0V stars, which are Vega corrected using a <a
   <li><strong>wave.fits</strong> (for both target and A0): The vacuum wavelength solution for a given source, in nm (so 1429nm for instance).</li>
 </ol>
 
-<p>The wavelength solution for PLP reduced data is derived in a multi-step process.
+<p>The wavelength solutions for PLP reduced spectra are derived in a multi-step process.
 Originally, IGRINS had a calibration unit installed that permitted nightly observations of ThAr arc lamps for wavelength calibration.
-Since IGRINS has no moving optics it has a fixed spectral format that changes on the order on &lt;1 pixel per night and &lt;5 pixels over a year.
+Since IGRINS has no moving optics, it has a fixed spectral format that changes on the order on &lt;1 pixel per night and &lt;5 pixels over a year.
 The calibration unit still provides wavelength calibration for IGRINS in the laboratory.
 In the RRISA reduced files the wavelength solution comes from an initial guess based on the historical wavelength solution.
 This initial guess is then refined using sky OH emission features in a 300s SKY frame taken each night on the telescope.
@@ -86,7 +86,7 @@ The wavelength solution is further refined by using telluric absorption features
 The dependence of the refinement on the telluric A0V means that the wavelength solution for each target is that copied from the telluric star.</p>
 
 <p>The telluric standard is divided by a Vega model to remove the deep and broad H2 absorption features in the A0V - leaving behind the telluric spectrum.
-This process is not perfect and can leave residual features due to differences in the line widths, and radial velocities of the telluric stars relative to the Vega model. When using PLP data for science pertaining to individual line strengths, you should compare your spectrum to that of the A0V, the Vega model and an atlas of <a href="https://psg.gsfc.nasa.gov/index.php">the Earth transmittance spectrum</a>. If your spectrum has significant telluric residuals, we provide Python based tools on the Tutorial page to help you remove these features. If you spectrum has access A0V residuals, you can use the Vega model and A0V spectrum from the PLP to perform your own telluric correction. Additional A0V observations from the same night might also provide a good correction.</p>
+This process is not perfect and can leave residual features due to differences in the line widths and radial velocities of the telluric stars relative to the Vega model. When using PLP data for science pertaining to individual line strengths, you should compare your spectrum to that of the A0V, the Vega model and <a href="https://psg.gsfc.nasa.gov/index.php">the Earth transmittance spectrum</a>. If your spectrum has significant telluric residuals, we provide Python based tools on the Tutorial page to help you remove these features. If you spectrum has excess A0V residuals, you can use the Vega model and A0V spectrum from the PLP to perform your own telluric correction. Additional A0V observations from the same night might also provide a good correction.</p>
 
 <p><strong><em>Note:</em></strong> <em>The output files from the IGRINS PLP are an in vacuum wavelength solution. Fit models are offset from expected line positions by 80-120 km/s the models are likely in air and not vacuum. The IAU standard conversion for air to vacuum wavelengths is given by <a href="https://ui.adsabs.harvard.edu/abs/1991ApJS...77..119M/abstract">Morton 1991</a>. For vacuum wavelengths (VAC) in Angstroms and convert to air wavelength (AIR) via:</em></p>
 <center>
