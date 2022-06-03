@@ -43,11 +43,9 @@
 
   <div class="post-content">
     <h1>Reduced Data Products</h1>
-<p>All of the existing IGRINS data has been hand reduced using the <a href="https://github.com/igrins/plp">(IGRINS plp)</a>.
-The Reduced version of RRISA includes different names for targets than the Raw component.
-These are names that have been painstakingly corrected by manually searching through the IGRINS paper logs for handwritten coordinates and names, through SIMBAD for nomenclature corrections and coordinate offsets.
-Targets that are subcomponents of systems or extended sources keep their identifier, and if not SIMBAD searchable, do not have any additional information added in the XMatch component of RRISA.
-The original names for all of the targets remain for reference to the Raw component.
+<p>All of the existing IGRINS data have been reduced using the <a href="https://github.com/igrins/plp">(IGRINS plp)</a>.
+The Reduced version of RRISA includes object names that have been manually corrected by searching through the IGRINS paper logs for handwritten coordinates and names, and through SIMBAD for nomenclature corrections and coordinate offsets.
+Targets that are subcomponents of systems or extended sources keep their Raw identifier, and if not SIMBAD searchable they do not have any additional information added in the XMatch component of RRISA.
 If users find anything that appears to be a misidentification we ask that they report it by raising a GitHub issue.</p>
 
 <h3>Data Reduction</h3>
@@ -59,7 +57,7 @@ Telluric standards were generally A0V stars, which are Vega corrected using a <a
 
 <p>The PLP outputs several files for each reduction:</p>
 <ol>
-  <li><strong>spec_A0v.fits:</strong> The A0 flattened and Vega flux corrected target spectra. This fits files includes the original data used to create the reduced spectrum. Each extension is a 2048x28 array with the same header (except for the PRIMARY extension) other than the EXTNAME. The following details the differences between each of the EXTNAMEs:
+  <li><strong>spec_A0v.fits:</strong> The target spectrum telluric corrected by the Vega corrected A0V. This FITS file includes the original data used to create the reduced spectrum. Each extension is a 2048x28 array with the same header. The differences between each of the EXTNAMEs are:
     <ul>
       <li><em>[0]-Primary:</em> The corrected target spectrum = (TGT_SPEC/A0V_SPEC)*VEGA_SPEC</li>
       <li><em>[1]-Wavelength:</em> The wavelength solution - in um (so 1.42um for instance)</li>
@@ -76,6 +74,19 @@ Telluric standards were generally A0V stars, which are Vega corrected using a <a
   <li><strong>var2d.fits</strong> (for both target and A0): the two dimensional variance</li>
   <li><strong>wave.fits</strong> (for both target and A0): The vacuum wavelength solution for a given source, in nm (so 1429nm for instance).</li>
 </ol>
+
+<p>The wavelength solution for PLP reduced data is derived in a multi-step process.
+Originally, IGRINS had a calibration unit installed that permitted nightly observations of ThAr arc lamps for wavelength calibration.
+Since IGRINS has no moving optics it has a fixed spectral format that changes on the order on &lt;1 pixel per night and &lt;5 pixels over a year.
+The calibration unit still provides wavelength calibration for IGRINS in the laboratory.
+In the RRISA reduced files the wavelength solution comes from an initial guess based on the historical wavelength solution.
+This initial guess is then refined using sky OH emission features in a 300s SKY frame taken each night on the telescope.
+SKY frames from adjacent nights also provide reliable wavelength solutions.
+The wavelength solution is further refined by using telluric absorption features in the A0V standard at wavelengths greater than 2.1μm.
+The dependence of the refinement on the telluric A0V means that the wavelength solution for each target is that copied from the telluric star.</p>
+
+<p>The telluric standard is divided by a Vega model to remove the deep and broad H2 absorption features in the A0V - leaving behind the telluric spectrum.
+This process is not perfect and can leave residual features due to differences in the line widths, and radial velocities of the telluric stars relative to the Vega model. When using PLP data for science pertaining to individual line strengths, you should compare your spectrum to that of the A0V, the Vega model and an atlas of <a href="https://psg.gsfc.nasa.gov/index.php">the Earth transmittance spectrum</a>. If your spectrum has significant telluric residuals, we provide Python based tools on the Tutorial page to help you remove these features. If you spectrum has access A0V residuals, you can use the Vega model and A0V spectrum from the PLP to perform your own telluric correction. Additional A0V observations from the same night might also provide a good correction.</p>
 
 <p><strong><em>Note:</em></strong> <em>The output files from the IGRINS PLP are an in vacuum wavelength solution. Fit models are offset from expected line positions by 80-120 km/s the models are likely in air and not vacuum. The IAU standard conversion for air to vacuum wavelengths is given by <a href="https://ui.adsabs.harvard.edu/abs/1991ApJS...77..119M/abstract">Morton 1991</a>. For vacuum wavelengths (VAC) in Angstroms and convert to air wavelength (AIR) via:</em></p>
 <center>
