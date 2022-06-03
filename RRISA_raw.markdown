@@ -8,16 +8,18 @@ permalink: /RRISA_raw/
 ---
 
 <h1>Raw IGRINS Files</h1>
-The Raw component of RRISA includes all of the frames IGRINS has ever observed before May 2021 including Flats, Darks, Arcs, Targets, and Standards.
-This includes images that are not suitable for science like partial frames, frames with incorrect exposure times, or mislabeled frames.
-RRISA includes all of the night logs and paper logs for all of the IGRINS observations.
-We highly recommend that users of the Raw component consult the paper logs for any observations pre-Gemini South to confirm all of the frames for any particular target are suitable for science before reducing a target spectra.
+The Raw component of RRISA includes all of the frames IGRINS has ever observed before May 2021 including Flats, Darks, Arcs, Targets, and Telluric Standards.
+Additionally, this includes the slit-viewer images from acquisition and guiding.
+Some spectral files are not suitable for science. For example - exposures interrupted by weather, frames with incorrect exposure times, or mislabeled frames.
+RRISA includes all of the night logs (digital and paper) for all of the IGRINS observations.
+We highly recommend that users of the Raw archive consult the night logs for all observations to confirm which frames are suitable for science.
 
 <h3>IGRINS Observations</h3>
 Raw data from IGRINS includes the ‘SDCS’ slit-viewer images, ‘SDCH’ two-dimensional H-band echellogram, and ‘SDCK’ two-dimensional K-band echellogram.
 IGRINS simultaneously observes the H and K spectra, and file numbers match for the two bands.
 Slit-viewer images are generally saved during target acquisition and guiding.
-An on chip image example of the IGRINS H and K band spectra can be seen below.
+The slit-viewer images are compressed to save hard drive space and are not appropriate for photometry.
+The raw spectral frames for the IGRINS H- and K-band spectra can be seen below.
 
 <center>
   <figure>

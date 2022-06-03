@@ -3,6 +3,7 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: page
+title: RRISA
 ---
 ![RRISA Logo](images/IGRINS_and_RRISA.png){:style="display:block; margin-left:auto; margin-right:auto; width:600px"}
 
