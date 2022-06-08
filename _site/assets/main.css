@@ -47,7 +47,7 @@ pre, code { font-size: 15px; border: 1px solid #7ab3ff; border-radius: 3px; back
 
 code { padding: 1px 5px; }
 
-pre { padding: 8px 12px; overflow-x: auto; }
+pre { padding: 0px 0px; overflow-x: auto; }
 
 pre > code { border: 0; padding-right: 0; padding-left: 0; }
 

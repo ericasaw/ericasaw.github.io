@@ -8,8 +8,7 @@ permalink: /RRISA_reduced/
 ---
 
 <h1>Reduced Data Products</h1>
-All of the existing IGRINS data has been hand reduced using the [(IGRINS plp)](https://github.com/igrins/plp).
-The Reduced version of RRISA includes different names for targets than the Raw component.
+All of the existing IGRINS data has been hand reduced using the [(IGRINS plp)](https://github.com/igrins/plp). The Reduced version of RRISA includes different names for targets than the Raw component.
 These are names that have been painstakingly corrected by manually searching through the IGRINS paper logs for handwritten coordinates and names, through SIMBAD for nomenclature corrections and coordinate offsets.
 Targets that are subcomponents of systems or extended sources keep their identifier, and if not SIMBAD searchable, do not have any additional information added in the XMatch component of RRISA.
 The original names for all of the targets remain for reference to the Raw component.
@@ -18,9 +17,15 @@ If users find anything that appears to be a misidentification we ask that they r
 <h3>Data Reduction</h3>
 IGRINS reduced data have been processed with the [IGRINS Pipeline Package (PLP)](https://github.com/igrins/plp) see [Lee+ 2017](https://zenodo.org/record/845059#.Yolg-C-cawA).
 
-The PLP optimally extracts 1D spectra, telluric corrects, and provides 2D rectified spectra for post-processing.  
-Wavelength solutions are determined using OH emission lines, and are then refined using telluric absorption lines in the telluric standard.
+The PLP optimally extracts 1D spectra, telluric corrects, and provides 2D rectified spectra for post-processing. Wavelength solutions are determined using OH emission lines, and are then refined using telluric absorption lines in the telluric standard.
 Telluric standards were generally A0V stars, which are Vega corrected using a [model of the Vega spectrum](http://kurucz.harvard.edu/stars.html.) ([see the file in the PLP](https://github.com/igrins/plp/blob/master/master_calib/A0V/vegallpr25.50000resam5.npy)).
+
+<center>
+  <figure>
+    <img src="/images/trappist-1_CO.png" alt="The Trappist-1 CO lines as seen by IGRINS plotted with muler."/>
+    <figcaption>A snippet of the Trappist-1 CO absorption lines from an IGRINS spectra reduced using IGRINS PLP and plotted using muler.</figcaption>
+  </figure>
+</center>
 
 The PLP outputs several files for each reduction:
 1. **spec_A0v.fits:** The A0 flattened and Vega flux corrected target spectra. This fits files includes the original data used to create the reduced spectrum. Each extension is a 2048x28 array with the same header (except for the PRIMARY extension) other than the EXTNAME. The following details the differences between each of the EXTNAMEs:

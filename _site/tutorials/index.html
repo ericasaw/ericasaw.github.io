@@ -46,7 +46,7 @@ html {
 }
 
 /* 2. Make nav sticky */
-test > nav {
+container > nav {
   position: sticky;
   align-self: start;
   top: 2rem;
@@ -85,10 +85,14 @@ container {
 
 </style>
 
+<link rel="stylesheet" href="../highlight/styles/idea.min.css">
+<script src="../highlight/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
 <container>
   <nav class="section-nav">
     <ol>
-      <li><a href="#box">UTBox</a></li>
+      <li><a href="#box">Quickstart</a></li>
       <li><a href="#plp">IGRINS plp</a></li>
       <li><a href="#muler">Quick Look</a></li>
       <li><a href="#specutils">Line Fitting</a></li>
@@ -96,14 +100,132 @@ container {
   </nav>
   <div>
       <section id="box">
-        <h2>Downloading UTBox Files via Python</h2>
+        <h1>RRISA Quickstart</h1>
+        <p>All of the IGRINS data is stored using Box. RRISA holds all of the download links
+        you'll need to access any of the IGRINS data products.</p>
+        <p>In these code snippets, we will walk through how to import the RRISA files into Python using pandas
+        DataFrame objects, manipulate DataFrames in various ways to find subsets of data, and how to download
+        an IGRINS data product using Python. The full tutorial, with outputs, is avalible as a Jupyter Notebook
+        in the Tutorials folder on our <a href = "https://github.com/IGRINScontact/RRISA">GitHub</a>.</p>
+        <h2>Reading in a RRISA File</h2>
+        <p>pandas provides the .read_csv function which can easily read in any of the RRISA files.</p>
+<pre><code class="python">import pandas
+#read in the cross matched superlog
+xmatch_superlog = pd.read_csv('../RRISA_XMatch/xmatch_log.csv')
+</code></pre>
+      <h2>Downloading IGRINS Data Products</h2>
+      <p>All of the values in the columns containing the download URLs are strings. We can easily convert
+      strings back into dictionaries (filename-url pairs) using the ast package. After, we use the requests
+      package to query the links for each file and download the content.</p>
+<pre><code class="python">import requests
+import ast
+#example dictionary with filename-url pairs
+test_dict = ast.literal_eval(xmatch_superlog['URLS_H'].iloc[0])
+</code></pre>
+      <figure>
+        <img src="../images/dictionary_example.png" alt="An example output dictionary that holds the download URLs.">
+      </figure>
+      <p>Here is an example of downloading one file from the above dictionary using the requests package.</p>
+<pre><code class="python">#using a session here means that requests can fetch the information faster
+#since the connection is reused
+session = requests.Session()
+#the response holds lots of information gathered from the request (session.get())
+response = session.get(test_dict['20170915/SDCH_20170915_0049.spec_a0v.fits'])
+#we can check the status code to make sure our link was found successfully
+if response.status_code == 200:
+  #open a file with the corresponding filename to dump the file content into
+  with open("SDCH_20170915_0049.spec_a0v.fits", 'wb') as f:
+    #write the file
+    f.write(response.content)
+  #close the file--especially important when writing many files at once or
+  #trying to prevent against corrupted files
+  f.close()
+  #print that we downloaded the file
+  print(f"Downloaded SDCH_20170915_0049.spec_a0v.fits")
+</code></pre>
+      <p>A more detailed example for multiple file downloads can be found in the full Quickstart tutorial on our
+      <a href = "https://github.com/IGRINScontact/RRISA">GitHub</a>.</p>
+      <h2>DataFrame Manipulation</h2>
+      <p>We can find the highest signal to noise spectra for each object using only a few lines of code.
+      First we sort the DataFrame using the 'SNRH' column from highest to lowest value and then we drop all of
+      the rows that have a repeat object name. When we keep the first occurance of each object name then we get
+      the highest SNR H band observation for each object!</p>
+<pre><code class = "python">#sort H band SNR from highest to lowest
+xmatch_superlog.sort_values(by=['SNRH'], ascending = False, inplace = True)
+#drop all but the first occurance of each object name
+xmatch_superlog.drop_duplicates(subset = ['MAIN_ID'], keep = 'first', inplace = True)
+</code></pre>
+      <p>We can also set limits on specific values. In this example we require that the SNR in the H band is
+      higher than 150.</p>
+<pre><code class = "python">#make a new DataFrame where the SNR H band spectra is greater than or equal to 150
+subset = xmatch_superlog[xmatch_superlog['SNRH'] >= 150.]
+</code></pre>
+      <p>We can also search for substrings within the possible identifiers for objects with SIMBAD counterparts.
+      Here is an example that shows how to search for the substring "Tau" within the SIMBAD identfiers.</p>
+<pre><code class = "python">#it is important to convert the Series (subset['IDS']) into a string (.astype(str))
+#so that way we do not get any errors from NaN values within the IDS column
+subset_tau = subset[subset['IDS'].astype('str').str.contains('Tau')]
+</code></pre>
+      <p>Finally, we can select specifically targets using: </p>
+<pre><code class = "python">#only keep TAR OBJTYPEs
+targets_tau = subset_tau[subset_tau['OBJTYPE'].astype('str').str.contains('TAR')]
+</code></pre>
+      <p>We can also filter by coordinates, but that process is more complicated and will be covered
+      in a specific tutorial.</p>
       </section>
+
       <section id="plp">
-        <h2>Reduce Raw IGRINS Spectra Using The IGRINS PipeLine Package (IGRINS plp)</h2>
+      <h2>Reduce Raw IGRINS Spectra Using The IGRINS PipeLine Package (IGRINS plp)</h2>
+      <h3>Installation</h3>
+      <p>The installation and methods of the IGRINS Pipeline Package (PLP) are detailed in the
+        <a href = "https://github.com/igrins/plp/wiki/How-to-run-pipeline">PLP Github wiki</a>.
+      The most recent version is V2.2 and it runs using Python 2.7. To manage your Python environments
+      we recommend <a href = "https://docs.anaconda.com/anaconda/install/">installing Anaconda</a>.
+      Once Anaconda is installed, follow these steps to create a PLP environment:</p>
+<pre><code class = "shell">> conda create -n igr-pipe python=2.7
+> source activate igr-pipe
+> conda install numpy scipy astropy matplotlib pandas jinja2
+> pip install stsci.image==2.2.0.dev0
+</code></pre>
+      <p><a href="https://github.com/igrins/plp/releases">Download the latest version of the PLP</a> and
+      place in a convient location (e.g. in your root folder or on your Desktop).</p>
+      <h3>Running the PLP</h3>
+      <p>Open a new terminal window and cd to the PLP folder. While there are numerous options
+      within the PLP reduction, the RRISA reduced data have been created using the following commands:</p>
+      <p>1. Activate the conda environment for the PLP</p>
+<pre><code class = "shell">> source activate igr-pipe</code></pre>
+      <p>2. Define the UT date for the data reduction. The raw data should be located in indata folder of PLP.</p>
+<pre><code class = "shell">> UTDATE=20210105</code></pre>
+      <p>3. Create a recipe log file which must be edited. </p>
+<pre><code class = "shell">> python igr_pipe.py prepare-recipe-logs $UTDATE --populate-group1</code></pre>
+      <p>The recipe file is compiled from the '.txt' log produced each night. If mistakes were made while
+        observing, then they will persist in the recipe file. You need to review the recipe file for the file
+        numbers and matching 'A B B A' sequences. The PLP requires FLATS (ON/OFF), SKY, TAR, and STD files for
+        a full reduction of the data. Group1 in each row of the recipe identifies the OBSID - the first file in
+        the observing sequence. Those numbers must match. Group2 in each row is set to '1' by default, but should
+        be changed to match the OBSID of the telluric standard. An example recipe file looks like: </p>
+        OBJNAME, OBJTYPE, GROUP1, GROUP2, EXPTIME, RECIPE, OBSIDS, FRAMETYPES <br>
+        FLAT, FLAT, 1, 1, 40.000000, FLAT, 1 2 3 4 5 11 12 13 14 15, OFF OFF OFF OFF OFF ON ON ON ON ON <br>
+        G162-44, TAR, 26, 21, 120.000000, STELLAR_AB, 26 27, A B <br>
+        HIP 38722, STD, 21, 1, 3.000000, A0V_AB, 21 22 23 24, A B B A <br>
+        SKY, TAR, 85, 1, 300.000000, SKY, 85, A <br> <br>
+        <p>4. Perform the reduction sequence for each recipe in the recipe file</p>
+<pre><code class = "bash">for RECIPE in flat register-sky sky-wvlsol a0v-ab a0v-onoff stellar-ab extended-ab
+extended-onoff stellar-onoff tell-wvsol
+do python igr_pipe.py $RECIPE $UTDATE
+  rc=$?
+  if [ $rc != "0" ]; then
+    exit $rc
+  fi
+done
+</code></pre>
+      <p>5. Perform the telluric correction</p>
+<pre><code class = "shell">> python igr_pipe.py divide-a0v $UTDATE --a0v=GROUP2</code></pre>
+      <p>We have provided recipe files for every night of reduced data. Please see the Reduced RRISA page for
+        details of the PLP output.</p>
       </section>
       <section id="muler">
         <h2>Quicklook IGRINS Spectra Using muler</h2>
-        <pre>Here is an example of a code block</pre>
       </section>
       <section id="specutils">
         <h2>Line Fitting Using specutils</h2>

@@ -147,7 +147,7 @@ blockquote {
 
 /**
  * Code formatting
- */
+*/
 pre,
 code {
   @include relative-font-size(0.9375);
@@ -161,7 +161,7 @@ code {
 }
 
 pre {
-  padding: 8px 12px;
+  padding: 0px 0px;
   overflow-x: auto;
 
   > code {
@@ -170,7 +170,6 @@ pre {
     padding-left: 0;
   }
 }
-
 
 
 /**
