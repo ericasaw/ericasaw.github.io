@@ -26,6 +26,6 @@ In this case the objects could match, but we suggest that the user manually chec
 
 <h3>RRISA XMatch</h3>
 
-Downloadable from [our GitHub](https://github.com/IGRINScontact/RRISA.git) as a .csv or .xlsx. Or view on through [Google Drive](https://docs.google.com/spreadsheets/d/1xLrfZoTgRyyi3KZd3d9Xf-pEvbf7BUS5GL1qdGCjegA/edit?usp=sharing)!
+Downloadable from [our GitHub](https://github.com/IGRINScontact/RRISA.git) as a .csv or .xlsx. Users can also view on through [Google Drive](https://docs.google.com/spreadsheets/d/1xLrfZoTgRyyi3KZd3d9Xf-pEvbf7BUS5GL1qdGCjegA/edit?usp=sharing) or [explore the RRISA_v0 folder on Box](https://utexas.box.com/v/RRISA-v0-July2014-May2021)!
 
 For a more detailed description of the XMatch RRISA header, check out the readme.md in the RRISA XMatch folder on [our GitHub](https://github.com/IGRINScontact/RRISA.git).

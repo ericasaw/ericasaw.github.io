@@ -37,6 +37,6 @@ __*Note:*__ _Data acquired between April 2018 and May 2019 was impacted by a sli
 
 <h3>RRISA Raw</h3>
 
-Downloadable from [our GitHub](https://github.com/IGRINScontact/RRISA.git) as a .csv or .xlsx. Or view through [Google Drive](https://docs.google.com/spreadsheets/d/1jqbt4-Qqula0TP_iJfw7BqiYPfOMnCWdc5JiovziYp0/edit?usp=sharing)!
+Downloadable from [our GitHub](https://github.com/IGRINScontact/RRISA.git) as a .csv or .xlsx. Users can also view through [Google Drive](https://docs.google.com/spreadsheets/d/1jqbt4-Qqula0TP_iJfw7BqiYPfOMnCWdc5JiovziYp0/edit?usp=sharing) or [explore the RRISA_v0 folder on Box](https://utexas.box.com/v/RRISA-v0-July2014-May2021)!
 
 For a more detailed description of the Raw RRISA header, check out the readme.md in the RRISA Raw folder on [our GitHub](https://github.com/IGRINScontact/RRISA.git).
