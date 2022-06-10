@@ -83,6 +83,13 @@ container {
   flex-direction: row;
 }
 
+hr {
+  border-color: #004aad;
+  background-color: #004aad;
+  margin: auto;
+  margin: 1em 0;
+}
+
 </style>
 
 <link rel="stylesheet" href="../highlight/styles/idea.min.css">
@@ -92,28 +99,50 @@ container {
 <container>
   <nav class="section-nav">
     <ol>
+      <li><a href="#RRISA">RRISA Access</a></li>
       <li><a href="#box">Quickstart</a></li>
       <li><a href="#plp">IGRINS plp</a></li>
       <li><a href="#muler">Quick Look</a></li>
-      <li><a href="#specutils">Line Fitting</a></li>
     </ol>
   </nav>
   <div>
+    <section id= "RRISA">
+      <h2>RRISA Access</h2>
+      <p>All of the IGRINS data is stored using Box. RRISA holds all of the download links
+        you'll need to access any of the IGRINS data products. We support access through of RRISA through
+        Python and provide tutorials for users to follow. We recommend that users install <a href = "https://www.anaconda.com/">Anaconda</a>,
+        a Python distributor and Python package manager. Direcitons for installing Anaconda on various operating
+        systems can be found <a href="https://docs.anaconda.com/anaconda/install/">here</a>. Finally, we
+        suggest that users seperate projects that use drastically different packages by utilizing
+        <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html">environments</a>.
+        A more detailed example of creating a specific environment for a project can be seen in the Quick-Look tutorial
+        (when installing the developer version of muler).
+      </p>
+      <h3> Jupyter </h3>
+      <p>
+        All of the tutorials are avalible as Jupyter Notebooks. You can install jupyter in a specific environment
+        (after installing Anaconda) and open a jupyter kernal using the following lines of code in a terminal:
+      </p>
+<pre><code class="shell">> source activate env-name
+> conda install -c conda-forge notebook
+> conda install -c conda-forge nb_conda_kernels
+> jupyter notebook
+</code></pre>
+    </section>
+    <hr>
       <section id="box">
-        <h1>RRISA Quickstart</h1>
-        <p>All of the IGRINS data is stored using Box. RRISA holds all of the download links
-        you'll need to access any of the IGRINS data products.</p>
+        <h2>RRISA Quickstart</h2>
         <p>In these code snippets, we will walk through how to import the RRISA files into Python using pandas
         DataFrame objects, manipulate DataFrames in various ways to find subsets of data, and how to download
         an IGRINS data product using Python. The full tutorial, with outputs, is avalible as a Jupyter Notebook
         in the Tutorials folder on our <a href = "https://github.com/IGRINScontact/RRISA">GitHub</a>.</p>
-        <h2>Reading in a RRISA File</h2>
+        <h3>Reading in a RRISA File</h3>
         <p>pandas provides the .read_csv function which can easily read in any of the RRISA files.</p>
 <pre><code class="python">import pandas
 #read in the cross matched superlog
 xmatch_superlog = pd.read_csv('../RRISA_XMatch/xmatch_log.csv')
 </code></pre>
-      <h2>Downloading IGRINS Data Products</h2>
+      <h3>Downloading IGRINS Data Products</h3>
       <p>All of the values in the columns containing the download URLs are strings. We can easily convert
       strings back into dictionaries (filename-url pairs) using the ast package. After, we use the requests
       package to query the links for each file and download the content.</p>
@@ -145,7 +174,7 @@ if response.status_code == 200:
 </code></pre>
       <p>A more detailed example for multiple file downloads can be found in the full Quickstart tutorial on our
       <a href = "https://github.com/IGRINScontact/RRISA">GitHub</a>.</p>
-      <h2>DataFrame Manipulation</h2>
+      <h3>DataFrame Manipulation</h3>
       <p>We can find the highest signal to noise spectra for each object using only a few lines of code.
       First we sort the DataFrame using the 'SNRH' column from highest to lowest value and then we drop all of
       the rows that have a repeat object name. When we keep the first occurance of each object name then we get
@@ -173,7 +202,7 @@ targets_tau = subset_tau[subset_tau['OBJTYPE'].astype('str').str.contains('TAR')
       <p>We can also filter by coordinates, but that process is more complicated and will be covered
       in a specific tutorial.</p>
       </section>
-
+<hr>
       <section id="plp">
       <h2>Reduce Raw IGRINS Spectra Using The IGRINS PipeLine Package (IGRINS plp)</h2>
       <h3>Installation</h3>
@@ -204,11 +233,12 @@ targets_tau = subset_tau[subset_tau['OBJTYPE'].astype('str').str.contains('TAR')
         a full reduction of the data. Group1 in each row of the recipe identifies the OBSID - the first file in
         the observing sequence. Those numbers must match. Group2 in each row is set to '1' by default, but should
         be changed to match the OBSID of the telluric standard. An example recipe file looks like: </p>
-        OBJNAME, OBJTYPE, GROUP1, GROUP2, EXPTIME, RECIPE, OBSIDS, FRAMETYPES <br>
-        FLAT, FLAT, 1, 1, 40.000000, FLAT, 1 2 3 4 5 11 12 13 14 15, OFF OFF OFF OFF OFF ON ON ON ON ON <br>
-        G162-44, TAR, 26, 21, 120.000000, STELLAR_AB, 26 27, A B <br>
-        HIP 38722, STD, 21, 1, 3.000000, A0V_AB, 21 22 23 24, A B B A <br>
-        SKY, TAR, 85, 1, 300.000000, SKY, 85, A <br> <br>
+<pre><code class = 'shell'>OBJNAME, OBJTYPE, GROUP1, GROUP2, EXPTIME, RECIPE, OBSIDS, FRAMETYPES
+FLAT, FLAT, 1, 1, 40.000000, FLAT, 1 2 3 4 5 11 12 13 14 15, OFF OFF OFF OFF OFF ON ON ON ON ON
+G162-44, TAR, 26, 21, 120.000000, STELLAR_AB, 26 27, A B
+HIP 38722, STD, 21, 1, 3.000000, A0V_AB, 21 22 23 24, A B B A
+SKY, TAR, 85, 1, 300.000000, SKY, 85, A
+</code></pre>
         <p>4. Perform the reduction sequence for each recipe in the recipe file</p>
 <pre><code class = "bash">for RECIPE in flat register-sky sky-wvlsol a0v-ab a0v-onoff stellar-ab extended-ab
 extended-onoff stellar-onoff tell-wvsol
@@ -224,12 +254,57 @@ done
       <p>We have provided recipe files for every night of reduced data. Please see the Reduced RRISA page for
         details of the PLP output.</p>
       </section>
+      <hr>
       <section id="muler">
-        <h2>Quicklook IGRINS Spectra Using muler</h2>
-      </section>
-      <section id="specutils">
-        <h2>Line Fitting Using specutils</h2>
-        <p>…</p>
+        <h2>Quick-Look IGRINS Spectra Using muler</h2>
+        <p><a href="https://muler.readthedocs.io/en/latest/">muler</a> is an open-source community-developed
+        Python package for analysis of data from echelle spectrographs. muler makes it easy to look at reduced
+        IGRINS data!
+        </p>
+        <p> muler has a very detailed and easy to follow <a href="https://muler.readthedocs.io/en/latest/install.html">installation page</a>.
+        It is important to make sure when installing muler through conda or pip that the package version is >= 0.3.3,
+        other versions have installation dependency issues that will prevent certain functions from working properly.
+        More importantly, muler must be installed in a Python 3.8 or greater environment. An environment with a specific
+        Python version can be created using the following in the terminal:
+        </p>
+<pre><code class = "shell">> conda create -n env_name python=3.8</code></pre>
+        <p> muler has excellent <a href="https://muler.readthedocs.io/en/latest/tutorials/index.html">documentation and tutorials</a> which
+          we highly recommend consulting when using RRISA. Any questions, bugs, or feature requests can be posted
+          to the <a href="https://github.com/OttoStruve/muler/">muler GitHub</a>.
+        </p>
+        <p>
+        The following tutorial quickly walks through how to read files downloaded using RRISA into muler for viewing.
+        There are two ways to read in an IGRINS spectrum: an entire band at once or one order in a band at a time. To read
+        in all of the orders at once we can use the IGRINSSpectrumList class:
+        </p>
+<pre><code class = "python">from muler.igrins import IGRINSSpectrumList
+#H Band spectra file path (in this directory the .sn file also exists) having a .sn file
+#with the corresponding file number in the same directory is a requirement of muler
+path_H = '20160227/21_Tau/SDCH_20160227_0041.spec_a0v.fits'
+#read in the H band spectrum
+spec_list = IGRINSSpectrumList.read(path_H)
+#plot the spectrum!
+spec_list.remove_nans().trim_edges().normalize().plot(color=None, ylo=0, yhi=5)
+</code></pre>
+      <figure>
+          <img src="../images/h_band_spec.png" alt="An H-Band IGRINS spectra plotted with muler.">
+      </figure>
+      <p>
+      To only read in one order at a time we can use the IGRINSSpectrum class:
+      </p>
+<pre><code class = "python">from muler.igrins import IGRINSSpectrum
+#read in a specific H Band order from the spectrum file
+order = IGRINSSpectrum(file=path_H, order = 21)
+#plot the order!
+order.remove_nans().trim_edges().normalize().plot(color=None, ylo=0.8, yhi=1.2)
+</code></pre>
+      <figure>
+        <img src="../images/h_band_order.png" alt="An H-Band IGRINS order plotted with muler.">
+      </figure>
+      <p>
+      A more detailed tutorial, including how to stitch H and K band spectra together can be found in the Tutorials 
+      folder on our GitHub (<a href="https://muler.readthedocs.io/en/latest/tutorials/index.html">and in the muler docs!</a>).
+      </p>
       </section>
   </div>
 </container>

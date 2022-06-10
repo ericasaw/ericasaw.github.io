@@ -11,8 +11,11 @@ permalink: /RRISA_reduced/
 All of the existing IGRINS data has been hand reduced using the [(IGRINS plp)](https://github.com/igrins/plp). The Reduced version of RRISA includes different names for targets than the Raw component.
 These are names that have been painstakingly corrected by manually searching through the IGRINS paper logs for handwritten coordinates and names, through SIMBAD for nomenclature corrections and coordinate offsets.
 Targets that are subcomponents of systems or extended sources keep their identifier, and if not SIMBAD searchable, do not have any additional information added in the XMatch component of RRISA.
-The original names for all of the targets remain for reference to the Raw component.
+The original names for all of the targets in both the recipe files and the Raw component of RRISA remain for reference.
 If users find anything that appears to be a misidentification we ask that they report it by raising a GitHub issue.
+
+Additionally, we provide all of the SIMBAD IDs for objects observed every night in an additional file.
+This file can effectively be used to search for the nights specific objects were observed for easier manipulation of the RRISA components.
 
 <h3>Data Reduction</h3>
 IGRINS reduced data have been processed with the [IGRINS Pipeline Package (PLP)](https://github.com/igrins/plp) see [Lee+ 2017](https://zenodo.org/record/845059#.Yolg-C-cawA).
@@ -53,7 +56,7 @@ The wavelength solution is further refined by using telluric absorption features
 The dependence of the refinement on the telluric A0V means that the wavelength solution for each target is that copied from the telluric star.
 
 The telluric standard is divided by a Vega model to remove the deep and broad H2 absorption features in the A0V - leaving behind the telluric spectrum.
-This process is not perfect and can leave residual features due to differences in the line widths and radial velocities of the telluric stars relative to the Vega model. When using PLP data for science pertaining to individual line strengths, you should compare your spectrum to that of the A0V, the Vega model and [the Earth transmittance spectrum](https://psg.gsfc.nasa.gov/index.php). If your spectrum has significant telluric residuals, we provide Python based tools on the Tutorial page to help you remove these features. If you spectrum has excess A0V residuals, you can use the Vega model and A0V spectrum from the PLP to perform your own telluric correction. Additional A0V observations from the same night might also provide a good correction.
+This process is not perfect and can leave residual features due to differences in the line widths and radial velocities of the telluric stars relative to the Vega model. When using PLP data for science pertaining to individual line strengths, users should compare the spectrum to that of the A0V, the Vega model and [the Earth transmittance spectrum](https://psg.gsfc.nasa.gov/index.php). If the spectrum has significant telluric residuals, we provide Python based tools on the Tutorial page for how to help remove these features. If the spectrum has excess A0V residuals, the Vega model and A0V spectrum from the PLP can be used to perform an improved telluric correction. Additional A0V observations from the same night might also improve corrections.
 
 __*Note:*__ _The output files from the IGRINS PLP are an in vacuum wavelength solution. Fit models are offset from expected line positions by 80-120 km/s the models are likely in air and not vacuum. The IAU standard conversion for air to vacuum wavelengths is given by [Morton 1991](https://ui.adsabs.harvard.edu/abs/1991ApJS...77..119M/abstract). For vacuum wavelengths (VAC) in Angstroms and convert to air wavelength (AIR) via:_
 <center>
@@ -61,9 +64,6 @@ __*Note:*__ _The output files from the IGRINS PLP are an in vacuum wavelength so
 </center>
 
 <h3>RRISA Reduced</h3>
-Downloadable from [our GitHub](https://github.com/IGRINScontact/RRISA.git) as a .csv or .xls or see the spreadsheet embedded below for quick ctr+f/cmd+f searching.
+Downloadable from [our GitHub](https://github.com/IGRINScontact/RRISA.git) as a .csv or .xlsx. Or viewing through [Google Drive](https://docs.google.com/spreadsheets/d/1RCxGboICnKQeD1suKG6CeGgSrZLGFYbiuVFF_uxNbUg/edit?usp=sharing)!
 
-For a more detailed description of the Reduced RRISA header, check out the readme_reduced.md in [our GitHub](https://github.com/IGRINScontact/RRISA.git).
-
-this is a test spreadsheet, not the actual one that will go here
-<iframe title="A test RRISA google sheet insert" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRtfBHWcplfpXJvxq2-PVoxkubwwTuQQtsvdTuTTdPxxWFpJKp3MPzPNhH0Eur87F8nytKgOLKwbyY6/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false" height="100%" width="100%"></iframe>
+For a more detailed description of the Reduced RRISA header, check out the readme.md in the RRISA Reduced folder on [our GitHub](https://github.com/IGRINScontact/RRISA.git).
